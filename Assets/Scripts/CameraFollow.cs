@@ -5,18 +5,12 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform _target;
     [SerializeField] private float _speed;
-
-    private float _screenSizeX;
-    private float _screenSizeY;
-
+ 
     private Camera _mainCamera;
 
     private void Awake()
     {
         _mainCamera = Camera.main;
-
-        _screenSizeX = Screen.height;
-        _screenSizeY = Screen.width;
     }
 
     private void Update()

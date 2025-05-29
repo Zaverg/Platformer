@@ -62,14 +62,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\ZoneDetection.cs" />
-    <Compile Include="Assets\Scripts\MobMover.cs" />
+    <Compile Include="Assets\Scripts\EnemiesController.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\SpawnCoins.cs" />
-    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
+    <Compile Include="Assets\Scripts\CharacterController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
