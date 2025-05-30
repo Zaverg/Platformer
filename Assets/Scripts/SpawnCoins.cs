@@ -4,17 +4,19 @@ using UnityEngine.Tilemaps;
 
 public class SpawnCoins : MonoBehaviour
 {
+    private const string NAME_SURFACE = "Grass";
+
     [SerializeField] private Tilemap _tileMap;
     [SerializeField] private float _chaseSpawn;
-    [SerializeField] private Transform _coin;
+    [SerializeField] private Coin _coin;
 
     private List<Vector2> _surface;
-    private List<Transform> _coins;
+    private List<Coin> _coins;
 
     private void Start()
     {
         _surface = new List<Vector2>();
-        _coins = new List<Transform>();
+        _coins = new List<Coin>();
 
         DefineSurface();
         SpawnCoin();
@@ -30,8 +32,13 @@ public class SpawnCoins : MonoBehaviour
 
         for (int i = 0; i < _surface.Count; i++)
         {
-            if(Random.Range(min, max) <= _chaseSpawn)
-                _coins.Add(Instantiate(_coin, new Vector3(_surface[i].x + coinSpawnPositionX, _surface[i].y + coinSpawnPositionY, 0), Quaternion.identity));
+            if (Random.Range(min, max) <= _chaseSpawn)
+            {
+                Coin coin = Instantiate(_coin, new Vector3(_surface[i].x + coinSpawnPositionX, _surface[i].y + coinSpawnPositionY, 0), Quaternion.identity);
+                coin.Taking += TakeCoin;
+
+                _coins.Add(coin);
+            }
         }
     }
 
@@ -47,12 +54,19 @@ public class SpawnCoins : MonoBehaviour
                 
                 TileBase tile = _tileMap.GetTile(positionTile);
 
-                if (tile != null && tile.name == "Grass")
+                if (tile != null && tile.name == NAME_SURFACE)
                 {
                     Vector2 worldPosition = _tileMap.CellToWorld(positionTile);
                     _surface.Add(worldPosition);
                 }
             }
         }
+    }
+
+    private void TakeCoin(Coin coin)
+    {
+        coin.Taking -= TakeCoin;
+
+        coin.gameObject.SetActive(false);
     }
 } 

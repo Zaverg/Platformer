@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public void Take()
-    {
-        gameObject.SetActive(false);
-    }
+    public event Action<Coin> Taking;
+
+    public void Take() =>
+        Taking?.Invoke(this);
+    
 }

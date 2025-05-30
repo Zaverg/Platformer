@@ -1,119 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\i2016\\platformer\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|C:\\Users\\i2016\\platformer\\assets\\scripts\\enemiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|C:\\Users\\i2016\\platformer\\assets\\scripts\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|C:\\Users\\i2016\\platformer\\assets\\scripts\\charactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\charactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\zonedetection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\zonedetection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|C:\\Users\\i2016\\platformer\\assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|C:\\Users\\i2016\\platformer\\assets\\scripts\\spawncoins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawncoins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CameraFollow.cs",
-              "DocumentMoniker": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\CameraFollow.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraFollow.cs",
-              "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\CameraFollow.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CameraFollow.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T09:40:07.191Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SpawnCoins.cs",
-              "DocumentMoniker": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\SpawnCoins.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SpawnCoins.cs",
-              "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\SpawnCoins.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SpawnCoins.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T12:43:23.562Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ZoneDetection.cs",
-              "DocumentMoniker": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\ZoneDetection.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ZoneDetection.cs",
-              "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\ZoneDetection.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ZoneDetection.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T05:15:04.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EnemiesController.cs",
-              "DocumentMoniker": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\EnemiesController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemiesController.cs",
-              "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\EnemiesController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\EnemiesController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAAEQAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T04:44:08.236Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Coin.cs",
-              "DocumentMoniker": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Coin.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Coin.cs",
-              "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Coin.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Coin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T07:49:30.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CharacterController.cs",
-              "DocumentMoniker": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\CharacterController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CharacterController.cs",
-              "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\CharacterController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CharacterController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T04:35:35.463Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
         {
           "DockedWidth": 190,
           "SelectedChildIndex": -1,

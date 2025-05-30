@@ -61,11 +61,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Coin.cs" />
-    <Compile Include="Assets\Scripts\ZoneDetection.cs" />
-    <Compile Include="Assets\Scripts\EnemiesController.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\MovePlayer.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\JumpPlayer.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemy\Patrol.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemy\EnemyThornsMover.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\SpawnCoins.cs" />
-    <Compile Include="Assets\Scripts\CharacterController.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\DefinedSurfacePlayer.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\CoinTaker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

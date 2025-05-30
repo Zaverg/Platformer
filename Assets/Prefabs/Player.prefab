@@ -10,12 +10,16 @@ GameObject:
   m_Component:
   - component: {fileID: 6815380802141951699}
   - component: {fileID: 3856589226446443535}
-  - component: {fileID: 2438021335558411365}
   - component: {fileID: 5827505473329789879}
   - component: {fileID: 5554181556478768137}
   - component: {fileID: 7507426398626044153}
+  - component: {fileID: 8374708122410625339}
+  - component: {fileID: 5464711645525568604}
+  - component: {fileID: 8967767164702655229}
+  - component: {fileID: 7446951995101412569}
+  - component: {fileID: 2644425162268739757}
   m_Layer: 3
-  m_Name: Body
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 99
-  m_Sprite: {fileID: -1401628621, guid: c483493eb3ec0f143b5d78ad823ac661, type: 3}
+  m_Sprite: {fileID: 326031704, guid: c483493eb3ec0f143b5d78ad823ac661, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,29 +93,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2438021335558411365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4480070673910826999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33fb02a1bd41a4c4da347c861babdc0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 3
-  _climbForce: 15
-  _surfaceCheckDistance: 0.1
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  _startRayPosition: {fileID: 2312073513282473847}
-  _jumpForce: 6
-  _jumpAngel: 60
-  _isGrounded: 0
-  _isJump: 0
 --- !u!50 &5827505473329789879
 Rigidbody2D:
   serializedVersion: 4
@@ -195,6 +176,79 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8374708122410625339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480070673910826999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a8e9aa3f3bd5642a55c59fbf2f5442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
+  _climbForce: 10
+--- !u!114 &5464711645525568604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480070673910826999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221498a967c454f46a3272cd34a93a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpForce: 8
+  _jumpAngel: 45
+--- !u!114 &8967767164702655229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480070673910826999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f2ed5a948f6544c8d07dd91b1f8fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _surfaceCheckDistance: 0.1
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  _startRayPosition: {fileID: 2312073513282473847}
+--- !u!114 &7446951995101412569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480070673910826999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b37bcef08e0494e854ea158a7fa4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2644425162268739757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480070673910826999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b868d23f5080e438effa0c6e145370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movePlayer: {fileID: 8374708122410625339}
+  _jumpPlayer: {fileID: 5464711645525568604}
+  _definedSurfacePlayer: {fileID: 8967767164702655229}
+  _jumpButton: 32
 --- !u!1 &9066152724072502097
 GameObject:
   m_ObjectHideFlags: 0
