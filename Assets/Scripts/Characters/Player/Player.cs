@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class Player : MonoBehaviour
 {
-    private const string AXIS_MOVING = "Horizontal";
+    private const string AXIS_MOVING_X = "Horizontal";
 
     private static readonly int _move = Animator.StringToHash("IsMove");
     private static readonly int _jump = Animator.StringToHash("IsJump");
@@ -32,8 +32,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        _inputDirection = Input.GetAxisRaw(AXIS_MOVING);
-        FlipSprite();
+        _inputDirection = Input.GetAxisRaw(AXIS_MOVING_X);
 
         if (_inputDirection == 0 && _isGrounded)
         {
@@ -68,7 +67,8 @@ public class Player : MonoBehaviour
             _isGrounded = false;
         }
         else if (_isGrounded && Mathf.Abs(_inputDirection) > 0f)
-        {           
+        {
+            FlipSprite();
             _movePlayer.Move(_inputDirection);
             _animator.SetBool(_move, true);          
         }

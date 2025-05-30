@@ -1,25 +1,31 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class SpawnCoins : MonoBehaviour
 {
-    private const string NAME_SURFACE = "Grass";
-
-    [SerializeField] private Tilemap _tileMap;
+    [SerializeField] private DefineSurface _defineSurface;
     [SerializeField] private float _chaseSpawn;
     [SerializeField] private Coin _coin;
+    [SerializeField] private float _respawnDelay;
 
     private List<Vector2> _surface;
+
     private List<Coin> _coins;
+    private List<Coin> _respawnCoins;
 
     private void Start()
     {
         _surface = new List<Vector2>();
         _coins = new List<Coin>();
+        _respawnCoins = new List<Coin>();
+        _surface = _defineSurface.GetSurface();
 
-        DefineSurface();
         SpawnCoin();
+    }
+
+    private void Update()
+    { 
+        RespawnCoin();
     }
 
     private void SpawnCoin()
@@ -35,38 +41,31 @@ public class SpawnCoins : MonoBehaviour
             if (Random.Range(min, max) <= _chaseSpawn)
             {
                 Coin coin = Instantiate(_coin, new Vector3(_surface[i].x + coinSpawnPositionX, _surface[i].y + coinSpawnPositionY, 0), Quaternion.identity);
-                coin.Taking += TakeCoin;
+                coin.Taking += DeleteCoin;
 
                 _coins.Add(coin);
             }
         }
     }
 
-    private void DefineSurface()
+    private void DeleteCoin(Coin coin)
     {
-        BoundsInt bounds = _tileMap.cellBounds;
-
-        for(int x = bounds.min.x; x < bounds.max.x; x++)
-        {
-            for (int y = bounds.min.y; y < bounds.max.y; y++)
-            {
-                Vector3Int positionTile = new Vector3Int(x, y, 0);
-                
-                TileBase tile = _tileMap.GetTile(positionTile);
-
-                if (tile != null && tile.name == NAME_SURFACE)
-                {
-                    Vector2 worldPosition = _tileMap.CellToWorld(positionTile);
-                    _surface.Add(worldPosition);
-                }
-            }
-        }
+        _respawnCoins.Add(coin);
+        coin.gameObject.SetActive(false);
     }
 
-    private void TakeCoin(Coin coin)
+    private void RespawnCoin()
     {
-        coin.Taking -= TakeCoin;
+        if (_respawnCoins.Count == 0)
+            return;
 
-        coin.gameObject.SetActive(false);
+        for (int i = 0; i < _respawnCoins.Count; i++)
+        {
+            if (_respawnCoins[i].TimeTake + _respawnDelay <= Time.time)
+            {
+                _respawnCoins[i].gameObject.SetActive(true);
+                _respawnCoins.RemoveAt(i);
+            }
+        }
     }
 } 
