@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Enviroment\Coin.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\DefinedSurfacePlayer.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\InputReader.cs" />
     <Compile Include="Assets\Scripts\Enviroment\DefineSurface.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\CoinTaker.cs" />
   </ItemGroup>

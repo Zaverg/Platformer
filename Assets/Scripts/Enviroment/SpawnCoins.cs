@@ -10,16 +10,17 @@ public class SpawnCoins : MonoBehaviour
 
     private List<Vector2> _surface;
 
-    private List<Coin> _coins;
     private List<Coin> _respawnCoins;
+
+    private void Awake()
+    {
+        _surface = new List<Vector2>();
+        _respawnCoins = new List<Coin>();
+        _surface = _defineSurface.GetSurface();
+    }
 
     private void Start()
     {
-        _surface = new List<Vector2>();
-        _coins = new List<Coin>();
-        _respawnCoins = new List<Coin>();
-        _surface = _defineSurface.GetSurface();
-
         SpawnCoin();
     }
 
@@ -41,9 +42,7 @@ public class SpawnCoins : MonoBehaviour
             if (Random.Range(min, max) <= _chaseSpawn)
             {
                 Coin coin = Instantiate(_coin, new Vector3(_surface[i].x + coinSpawnPositionX, _surface[i].y + coinSpawnPositionY, 0), Quaternion.identity);
-                coin.Taking += DeleteCoin;
-
-                _coins.Add(coin);
+                coin.Took += DeleteCoin;
             }
         }
     }

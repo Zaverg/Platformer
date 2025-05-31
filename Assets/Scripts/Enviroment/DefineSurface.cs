@@ -12,9 +12,13 @@ public class DefineSurface : MonoBehaviour
     public List<Vector2> GetSurface() => 
         _surface;
 
-    private void Start()
+    private void Awake()
     {
         _surface = new List<Vector2>();
+    }
+
+    private void Start()
+    {
         Define();
     }
 
