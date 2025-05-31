@@ -4,8 +4,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private InputReader _inputReader;
-    [SerializeField] private MovePlayer _movePlayer;
-    [SerializeField] private JumpPlayer _jumpPlayer;
+    [SerializeField] private Mover _movePlayer;
+    [SerializeField] private Jumper _jumpPlayer;
     [SerializeField] private DefinedSurfacePlayer _definedSurfacePlayer;
     [SerializeField] private AnimatorPlayer _animatorPlayer;
 

@@ -60,8 +60,6 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.13f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Characters\Player\MovePlayer.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\JumpPlayer.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\AnimatorPlayer.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Patrol.cs" />
     <Compile Include="Assets\Scripts\Enviroment\SpawnCoins.cs" />
@@ -69,6 +67,8 @@
     <Compile Include="Assets\Scripts\Characters\Enemy\EnemyThornsMover.cs" />
     <Compile Include="Assets\Scripts\Enviroment\Coin.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Mover.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Jumper.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\DefinedSurfacePlayer.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\InputReader.cs" />
     <Compile Include="Assets\Scripts\Enviroment\DefineSurface.cs" />

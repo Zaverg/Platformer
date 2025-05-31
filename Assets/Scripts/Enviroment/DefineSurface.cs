@@ -4,13 +4,10 @@ using UnityEngine.Tilemaps;
 
 public class DefineSurface : MonoBehaviour
 {
-    private const string NAME_SURFACE = "Grass";
+    private const string NameSurface = "Grass";
 
     [SerializeField] private Tilemap _tileMap;
     private List<Vector2> _surface;
-
-    public List<Vector2> GetSurface() => 
-        _surface;
 
     private void Awake()
     {
@@ -34,7 +31,7 @@ public class DefineSurface : MonoBehaviour
 
                 TileBase tile = _tileMap.GetTile(positionTile);
 
-                if (tile != null && tile.name == NAME_SURFACE)
+                if (tile != null && tile.name == NameSurface)
                 {
                     Vector2 worldPosition = _tileMap.CellToWorld(positionTile);
                     _surface.Add(worldPosition);
@@ -42,4 +39,7 @@ public class DefineSurface : MonoBehaviour
             }
         }
     }
+
+    public List<Vector2> GetSurface() =>
+        _surface;
 }

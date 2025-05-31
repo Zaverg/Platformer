@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent (typeof(Rigidbody2D))]
-public class JumpPlayer : MonoBehaviour
+public class Jumper : MonoBehaviour
 {
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _jumpAngel = 45;
@@ -12,7 +12,7 @@ public class JumpPlayer : MonoBehaviour
 
     public bool IsJump => _isJump;
 
-    private void Start()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }

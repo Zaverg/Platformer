@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class MovePlayer : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+public class Mover : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f;
     [SerializeField] private float _climbForce = 10f;

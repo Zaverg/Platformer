@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class AnimatorPlayer : MonoBehaviour
 {
     private static readonly int s_move = Animator.StringToHash("IsMove");

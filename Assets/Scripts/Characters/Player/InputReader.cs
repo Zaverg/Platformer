@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InputReader : MonoBehaviour
 {
-    private const string AXIS_MOVING_X = "Horizontal";
+    private const string AxisMovingX = "Horizontal";
 
     [SerializeField] private KeyCode _jumpButton;
 
@@ -16,7 +16,7 @@ public class InputReader : MonoBehaviour
 
     private void Update()
     {
-        _inputDirection = Input.GetAxisRaw(AXIS_MOVING_X);
+        _inputDirection = Input.GetAxisRaw(AxisMovingX);
 
         if (Input.GetKeyDown(_jumpButton))
         {
