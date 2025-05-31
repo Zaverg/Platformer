@@ -19,7 +19,7 @@ public class JumpPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (_rigidbody.velocity.y == 0f)
+        if (_isJump && _rigidbody.velocity.y <= -0.1f)
             _isJump = false;
     }
 
@@ -29,18 +29,19 @@ public class JumpPlayer : MonoBehaviour
         _isJump = true;
 
         Vector2 directionJump;
-        float angelRad = _jumpAngel * Mathf.Deg2Rad;
 
-        float jumpForceX = Mathf.Cos(angelRad);
-        float jumpForceY = Mathf.Sin(angelRad);
-
-        if (inputDirection != 0)
+        if (inputDirection == 0)
         {
-            directionJump = new Vector2(jumpForceX * Mathf.Sign(inputDirection), jumpForceY) * _jumpForce;
+            directionJump = Vector2.up * _jumpForce;
         }
         else
         {
-            directionJump = Vector2.up * _jumpForce;
+            float angelRad = _jumpAngel * Mathf.Deg2Rad;
+
+            float jumpForceX = Mathf.Cos(angelRad);
+            float jumpForceY = Mathf.Sin(angelRad);
+
+            directionJump = new Vector2(jumpForceX * Mathf.Sign(inputDirection), jumpForceY) * _jumpForce;
         }
 
         _rigidbody.AddForce(directionJump, ForceMode2D.Impulse);

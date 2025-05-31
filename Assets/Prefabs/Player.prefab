@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 8967767164702655229}
   - component: {fileID: 7446951995101412569}
   - component: {fileID: 2644425162268739757}
+  - component: {fileID: 3388083749890480533}
+  - component: {fileID: 64113555391856185}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -202,8 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221498a967c454f46a3272cd34a93a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 8
-  _jumpAngel: 45
+  _jumpForce: 6
+  _jumpAngel: 70
 --- !u!114 &8967767164702655229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,10 +247,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b868d23f5080e438effa0c6e145370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inputReader: {fileID: 3388083749890480533}
   _movePlayer: {fileID: 8374708122410625339}
   _jumpPlayer: {fileID: 5464711645525568604}
   _definedSurfacePlayer: {fileID: 8967767164702655229}
+  _animatorPlayer: {fileID: 64113555391856185}
+--- !u!114 &3388083749890480533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480070673910826999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b5699367af3ad4ca18d7228ae3062a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _jumpButton: 32
+--- !u!114 &64113555391856185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480070673910826999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc476420829c35946b359379fe11d08a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9066152724072502097
 GameObject:
   m_ObjectHideFlags: 0

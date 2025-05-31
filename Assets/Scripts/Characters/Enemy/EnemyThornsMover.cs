@@ -9,7 +9,7 @@ public class EnemyThornsMover : MonoBehaviour
     private void Update()
     {
         _currentTarget = _patrol.CurrentTarget;
-        Vector3 target = new Vector3(_currentTarget.position.x, transform.position.y, transform.position.y);
+        Vector3 target = new Vector3(_currentTarget.position.x, transform.position.y, transform.position.z);
 
         transform.position = Vector3.MoveTowards(transform.position, target, _patrol.Speed * Time.deltaTime);
     }

@@ -6,7 +6,6 @@ public class InputReader : MonoBehaviour
     private const string AXIS_MOVING_X = "Horizontal";
 
     [SerializeField] private KeyCode _jumpButton;
-    [SerializeField] private JumpPlayer _jumpPlayer;
 
     private float _inputDirection;
 
@@ -24,7 +23,7 @@ public class InputReader : MonoBehaviour
             Jumped?.Invoke(_inputDirection);
         }
 
-        if (_jumpPlayer.IsJump == false && _inputDirection != 0)
+        if (IsMove)
         {
             Moved?.Invoke(_inputDirection);
         }

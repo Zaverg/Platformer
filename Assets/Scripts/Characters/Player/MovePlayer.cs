@@ -11,13 +11,10 @@ public class MovePlayer : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void Move(float inputDirection)
     {
-        _spriteRenderer.flipX = inputDirection < 0;
-
         _rigidbody.AddForce(Vector2.right * inputDirection * _speed * _climbForce);
         _rigidbody.velocity = Vector2.ClampMagnitude(_rigidbody.velocity, _speed);  
     }

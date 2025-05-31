@@ -3,62 +3,55 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class Player : MonoBehaviour
 {
-    private static readonly int s_move = Animator.StringToHash("IsMove");
-    private static readonly int s_jump = Animator.StringToHash("IsJump");
-
     [SerializeField] private InputReader _inputReader;
     [SerializeField] private MovePlayer _movePlayer;
     [SerializeField] private JumpPlayer _jumpPlayer;
     [SerializeField] private DefinedSurfacePlayer _definedSurfacePlayer;
+    [SerializeField] private AnimatorPlayer _animatorPlayer;
 
-    private Animator _animator;
     private Rigidbody2D _rigidbody;
+    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
     {
-        _inputReader.Jumped += _jumpPlayer.Jump;
-        _inputReader.Moved += _movePlayer.Move;
+        _inputReader.Jumped += OnJumpInput;
+        _inputReader.Moved += OnMovementInput;
     }
 
     private void OnDisable()
     {
-        _inputReader.Jumped -= _jumpPlayer.Jump;
-        _inputReader.Moved -= _movePlayer.Move;
+        _inputReader.Jumped -= OnJumpInput;
+        _inputReader.Moved -= OnMovementInput;
     }
 
     private void Update()
     {
-        if (_definedSurfacePlayer.IsGrounded)
-        { 
-            if (_jumpPlayer.IsJump == false && _inputReader.IsMove == false)
-            {        
-                _rigidbody.velocity = Vector2.zero;
-            }
-     
-            if(_inputReader.IsMove && _jumpPlayer.IsJump == false)
-            {
-                _animator.SetBool(s_move, true);
-            }
-            else
-            {
-                _animator.SetBool(s_move, false);
-            }
+        if (_jumpPlayer.IsJump == false && _inputReader.IsMove == false && _definedSurfacePlayer.IsGrounded)      
+            _rigidbody.velocity = Vector2.zero;
+        
+        bool shouldMove = _jumpPlayer.IsJump == false && _inputReader.IsMove && _definedSurfacePlayer.IsGrounded;
+        _animatorPlayer.SetMoveAnimation(shouldMove);
 
-            if (_jumpPlayer.IsJump)
-            {
-                _animator.SetBool(s_jump, true);
-            }
-        }
+        _animatorPlayer.SetJumpAnimation(_jumpPlayer.IsJump);
+    }
 
-        if (_rigidbody.velocity.y < 0.1f)
-        {
-            _animator.SetBool(s_jump, false);
-        }
+    private void OnMovementInput(float inputDirection)
+    {
+        _spriteRenderer.flipX = inputDirection < 0;
+
+        if (_jumpPlayer.IsJump == false && _definedSurfacePlayer.IsGrounded)
+            _movePlayer.Move(inputDirection);
+    }
+
+    private void OnJumpInput(float inputDirection)
+    {
+        if (_definedSurfacePlayer.IsGrounded && _jumpPlayer.IsJump == false)
+            _jumpPlayer.Jump(inputDirection);
     }
 }

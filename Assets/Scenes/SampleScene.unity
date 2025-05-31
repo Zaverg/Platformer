@@ -4581,21 +4581,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2644425162268739757, guid: 3c0b3f76fcc761e49bbcec40b1b26b1a, type: 3}
-      propertyPath: _inputReader
-      value: 
-      objectReference: {fileID: 5765234171671146175}
     - target: {fileID: 4480070673910826999, guid: 3c0b3f76fcc761e49bbcec40b1b26b1a, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464711645525568604, guid: 3c0b3f76fcc761e49bbcec40b1b26b1a, type: 3}
-      propertyPath: _jumpAngel
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464711645525568604, guid: 3c0b3f76fcc761e49bbcec40b1b26b1a, type: 3}
-      propertyPath: _jumpForce
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6815380802141951699, guid: 3c0b3f76fcc761e49bbcec40b1b26b1a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4640,41 +4628,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4480070673910826999, guid: 3c0b3f76fcc761e49bbcec40b1b26b1a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5765234171671146175}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c0b3f76fcc761e49bbcec40b1b26b1a, type: 3}
---- !u!1 &5765234171671146174 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4480070673910826999, guid: 3c0b3f76fcc761e49bbcec40b1b26b1a, type: 3}
-  m_PrefabInstance: {fileID: 5765234171671146173}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5765234171671146175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5765234171671146174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b5699367af3ad4ca18d7228ae3062a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _jumpButton: 32
-  _jumpPlayer: {fileID: 5765234171671146179}
---- !u!114 &5765234171671146179 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5464711645525568604, guid: 3c0b3f76fcc761e49bbcec40b1b26b1a, type: 3}
-  m_PrefabInstance: {fileID: 5765234171671146173}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5765234171671146174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 221498a967c454f46a3272cd34a93a8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8478161141814948890
 PrefabInstance:
   m_ObjectHideFlags: 0

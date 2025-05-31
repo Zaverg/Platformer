@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Characters\Player\MovePlayer.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\JumpPlayer.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\AnimatorPlayer.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Patrol.cs" />
     <Compile Include="Assets\Scripts\Enviroment\SpawnCoins.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Player.cs" />

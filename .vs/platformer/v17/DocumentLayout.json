@@ -7,19 +7,23 @@
       "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\player\\inputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|C:\\Users\\i2016\\platformer\\assets\\scripts\\characters\\player\\inputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\inputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\player\\jumpplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\jumpplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\player\\animatorplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\animatorplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\player\\moveplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|C:\\Users\\i2016\\platformer\\assets\\scripts\\characters\\player\\moveplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\moveplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\player\\definedsurfaceplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|C:\\Users\\i2016\\platformer\\assets\\scripts\\characters\\player\\jumpplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\jumpplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|C:\\Users\\i2016\\platformer\\assets\\scripts\\characters\\player\\definedsurfaceplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7DF86CE5-98AD-27B9-C81C-95E986E42321}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\definedsurfaceplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,8 +34,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 190,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InputReader.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Characters\\Player\\InputReader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\InputReader.cs",
+              "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Characters\\Player\\InputReader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\InputReader.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T05:27:49.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AnimatorPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Characters\\Player\\AnimatorPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\AnimatorPlayer.cs",
+              "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Characters\\Player\\AnimatorPlayer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\AnimatorPlayer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T08:52:10.412Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -40,14 +70,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\MovePlayer.cs",
               "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Characters\\Player\\MovePlayer.cs",
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\MovePlayer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-31T05:48:08.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DefinedSurfacePlayer.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Characters\\Player\\DefinedSurfacePlayer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\DefinedSurfacePlayer.cs",
@@ -60,28 +90,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "JumpPlayer.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Characters\\Player\\JumpPlayer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\JumpPlayer.cs",
               "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Characters\\Player\\JumpPlayer.cs",
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\JumpPlayer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAoAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAqwAoAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-31T05:38:35.601Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InputReader.cs",
-              "DocumentMoniker": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Characters\\Player\\InputReader.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\InputReader.cs",
-              "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Characters\\Player\\InputReader.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\InputReader.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T05:27:49.755Z",
               "EditorCaption": ""
             },
             {
@@ -92,7 +109,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\Player.cs",
               "ToolTip": "C:\\Users\\i2016\\platformer\\Assets\\Scripts\\Characters\\Player\\Player.cs",
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\Player.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAADQAAAAjAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAqwBoAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-30T10:20:42.54Z",
               "EditorCaption": ""
