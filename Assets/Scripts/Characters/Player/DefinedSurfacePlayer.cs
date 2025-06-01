@@ -23,7 +23,6 @@ public class DefinedSurfacePlayer : MonoBehaviour
     private void Awake()
     {
         _hits = new List<RaycastHit2D>();
-        _xStepRayPosition = _xStepRayPosition / (_countRays - 1);
     }
 
     private void FixedUpdate()
@@ -34,18 +33,32 @@ public class DefinedSurfacePlayer : MonoBehaviour
 
     public void DefineSurface()
     {
+        _hits.Clear();
+
         for (int i = 0; i < _countRays; i++)
         {
+            Vector3 rayStart = new Vector3(
+                _startRayPosition.position.x + i * _xStepRayPosition,
+                _startRayPosition.position.y,
+                _startRayPosition.position.z
+            );
+
             RaycastHit2D hit = Physics2D.Raycast(
             new Vector3(_startRayPosition.transform.position.x + i * _xStepRayPosition, _startRayPosition.transform.position.y, _startRayPosition.transform.position.z),
             Vector2.down,
             _surfaceCheckDistance,
             _groundLayer);
 
-            Debug.DrawRay(hit.point, hit.normal, Color.red, 0.1f);
+            Debug.DrawRay(rayStart, hit.normal, Color.red, 0.1f);
+
+            Debug.DrawRay(rayStart, Vector2.down * _surfaceCheckDistance, Color.blue, 0.1f);
 
             if (hit.collider != null)
+            {
                 _hits.Add(hit);
+                
+                Debug.DrawRay(hit.point, hit.normal, Color.red, 0.1f);
+            }
         }
 
 
@@ -54,20 +67,23 @@ public class DefinedSurfacePlayer : MonoBehaviour
 
     private void DefineAngel()
     {
-        float maxAngel = -1;
-        Vector2 normal = new Vector2(0, 0);
+        if (_hits.Count == 0)
+        {
+            _directionMove = Vector2.right;
+            return;
+        }
+
+        Vector2 averageNormal = Vector2.zero;
 
         foreach (RaycastHit2D hit in _hits)
         {
-            float angle = Vector2.Angle(Vector2.up, hit.normal);
-
-            if (angle > maxAngel)
-            {
-                maxAngel = angle;
-                normal = hit.normal;
-            }
+            averageNormal += hit.normal;
         }
 
-        _directionMove = new Vector2(normal.y, -normal.x).normalized;
+        averageNormal = (averageNormal / _hits.Count).normalized;
+
+        _directionMove = new Vector2(averageNormal.y, -averageNormal.x).normalized;
+
+        Debug.DrawRay(transform.position, _directionMove * 2f, Color.green, 0.1f);
     }
 }
