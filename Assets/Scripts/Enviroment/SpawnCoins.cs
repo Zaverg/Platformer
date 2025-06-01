@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,28 +9,25 @@ public class SpawnCoins : MonoBehaviour
     [SerializeField] private Coin _coin;
     [SerializeField] private float _respawnDelay;
 
-    private List<Vector2> _surface;
-
-    private List<Coin> _respawnCoins;
+    private List<Coin> _coins;
 
     private void Awake()
     {
-        _surface = new List<Vector2>();
-        _respawnCoins = new List<Coin>();
-        _surface = _defineSurface.GetSurface();
+        _coins = new List<Coin>();
     }
 
     private void Start()
     {
-        SpawnCoin();
+        Spawn();
     }
 
-    private void Update()
-    { 
-        RespawnCoin();
+    private void OnDisable()
+    {
+        foreach (Coin coin in _coins)
+            coin.Took -= DeleteCoin;
     }
 
-    private void SpawnCoin()
+    private void Spawn()
     {
         int min = 0;
         int max = 100;
@@ -37,11 +35,13 @@ public class SpawnCoins : MonoBehaviour
         float coinSpawnPositionX = 0.5f;
         float coinSpawnPositionY = 1.5f;
 
-        for (int i = 0; i < _surface.Count; i++)
+        List<Vector2> surface = _defineSurface.GetSurface();
+
+        for (int i = 0; i < surface.Count; i++)
         {
             if (Random.Range(min, max) <= _chaseSpawn)
             {
-                Coin coin = Instantiate(_coin, new Vector3(_surface[i].x + coinSpawnPositionX, _surface[i].y + coinSpawnPositionY, 0), Quaternion.identity);
+                Coin coin = Instantiate(_coin, new Vector3(surface[i].x + coinSpawnPositionX, surface[i].y + coinSpawnPositionY, 0), Quaternion.identity);
                 coin.Took += DeleteCoin;
             }
         }
@@ -49,22 +49,13 @@ public class SpawnCoins : MonoBehaviour
 
     private void DeleteCoin(Coin coin)
     {
-        _respawnCoins.Add(coin);
         coin.gameObject.SetActive(false);
+        StartCoroutine(Respawning(coin));
     }
 
-    private void RespawnCoin()
+    private IEnumerator Respawning(Coin coin)
     {
-        if (_respawnCoins.Count == 0)
-            return;
-
-        for (int i = 0; i < _respawnCoins.Count; i++)
-        {
-            if (_respawnCoins[i].TimeTake + _respawnDelay <= Time.time)
-            {
-                _respawnCoins[i].gameObject.SetActive(true);
-                _respawnCoins.RemoveAt(i);
-            }
-        }
+        yield return new WaitForSeconds(_respawnDelay);
+        coin.gameObject.SetActive(true);
     }
 } 

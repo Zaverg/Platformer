@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DefinedSurfacePlayer : MonoBehaviour
@@ -5,6 +6,9 @@ public class DefinedSurfacePlayer : MonoBehaviour
     [SerializeField] private float _surfaceCheckDistance;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Transform _startRayPosition;
+    [SerializeField] private float _xStepRayPosition;
+
+    private int _countRays = 3;
 
     private bool _isGrounded;
 
@@ -17,12 +21,20 @@ public class DefinedSurfacePlayer : MonoBehaviour
 
     public void DefineSurface()
     {
-        RaycastHit2D hit = Physics2D.Raycast(
-            new Vector3(_startRayPosition.transform.position.x, _startRayPosition.transform.position.y, _startRayPosition.transform.position.z),
+        int count = 0;
+
+        for (int i = 0; i < _countRays; i++)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(
+            new Vector3(_startRayPosition.transform.position.x + i * _xStepRayPosition, _startRayPosition.transform.position.y, _startRayPosition.transform.position.z),
             Vector2.down,
             _surfaceCheckDistance,
             _groundLayer);
 
-        _isGrounded = hit.collider != null;
+            if (hit.collider != null)
+                count++;
+        }
+
+        _isGrounded = count > 0;
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private InputReader _inputReader;
-    [SerializeField] private Mover _movePlayer;
-    [SerializeField] private Jumper _jumpPlayer;
+    [SerializeField] private Mover _mover;
+    [SerializeField] private Jumper _jumper;
     [SerializeField] private DefinedSurfacePlayer _definedSurfacePlayer;
     [SerializeField] private AnimatorPlayer _animatorPlayer;
 
@@ -32,26 +32,27 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (_jumpPlayer.IsJump == false && _inputReader.IsMove == false && _definedSurfacePlayer.IsGrounded)      
-            _rigidbody.velocity = Vector2.zero;
-        
-        bool shouldMove = _jumpPlayer.IsJump == false && _inputReader.IsMove && _definedSurfacePlayer.IsGrounded;
+        if (_jumper.IsJump == false && _inputReader.IsMove == false || _jumper.IsJump == false && _definedSurfacePlayer.IsGrounded == false)      
+            _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);
+
+        bool shouldMove = _jumper.IsJump == false && _inputReader.IsMove && _definedSurfacePlayer.IsGrounded;
         _animatorPlayer.SetMoveAnimation(shouldMove);
 
-        _animatorPlayer.SetJumpAnimation(_jumpPlayer.IsJump);
+        bool shouldJump = _jumper.IsJump && _rigidbody.velocity.y > 0.1f;
+        _animatorPlayer.SetJumpAnimation(shouldJump);
     }
 
     private void OnMovementInput(float inputDirection)
     {
         _spriteRenderer.flipX = inputDirection < 0;
 
-        if (_jumpPlayer.IsJump == false && _definedSurfacePlayer.IsGrounded)
-            _movePlayer.Move(inputDirection);
+        if (_jumper.IsJump == false && _definedSurfacePlayer.IsGrounded)
+            _mover.Move(inputDirection);
     }
 
     private void OnJumpInput(float inputDirection)
     {
-        if (_definedSurfacePlayer.IsGrounded && _jumpPlayer.IsJump == false)
-            _jumpPlayer.Jump(inputDirection);
+        if (_definedSurfacePlayer.IsGrounded && _jumper.IsJump == false)
+            _jumper.Jump(inputDirection);
     }
 }

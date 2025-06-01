@@ -41,5 +41,5 @@ public class DefineSurface : MonoBehaviour
     }
 
     public List<Vector2> GetSurface() =>
-        _surface;
+        new List<Vector2>(_surface);
 }

@@ -19,7 +19,7 @@ public class Jumper : MonoBehaviour
 
     private void Update()
     {
-        if (_isJump && _rigidbody.velocity.y <= -0.1f)
+        if (_isJump && _rigidbody.velocity.y == 0f)
             _isJump = false;
     }
 
