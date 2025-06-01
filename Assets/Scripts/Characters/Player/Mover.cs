@@ -14,9 +14,9 @@ public class Mover : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public void Move(float inputDirection)
+    public void Move(float inputDirection, Vector2 surfaceDirection)
     {
-        _rigidbody.AddForce(Vector2.right * inputDirection * _speed * _climbForce);
+        _rigidbody.AddForce(surfaceDirection * inputDirection * _speed * _climbForce);
         _rigidbody.velocity = Vector2.ClampMagnitude(_rigidbody.velocity, _speed);  
     }
 }

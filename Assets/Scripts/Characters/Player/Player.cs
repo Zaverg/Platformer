@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         _spriteRenderer.flipX = inputDirection < 0;
 
         if (_jumper.IsJump == false && _definedSurfacePlayer.IsGrounded)
-            _mover.Move(inputDirection);
+            _mover.Move(inputDirection, _definedSurfacePlayer.DirectionMove);
     }
 
     private void OnJumpInput(float inputDirection)
