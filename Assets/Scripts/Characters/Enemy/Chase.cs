@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class Chase : MonoBehaviour
+public class Chase : State
 {
     [SerializeField] private float _speed;
-
- 
+    
 }
