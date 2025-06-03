@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class DefinedSurfacePlayer : MonoBehaviour
@@ -14,11 +12,13 @@ public class DefinedSurfacePlayer : MonoBehaviour
     private List<RaycastHit2D> _hits;
 
     private Vector2 _directionMove;
+    private Vector2 _averageNormal;
 
     private bool _isGrounded;
 
     public bool IsGrounded => _isGrounded;
     public Vector2 DirectionMove => _directionMove;
+    public Vector2 AverageNormal => _averageNormal;
 
     private void Awake()
     {
@@ -28,10 +28,35 @@ public class DefinedSurfacePlayer : MonoBehaviour
     private void FixedUpdate()
     {
         DefineSurface();
-        DefineAngel();
     }
 
-    public void DefineSurface()
+    public Vector2 DefineAngel(float inputDirection)
+    {
+        if (_hits.Count == 0)
+        {
+            _directionMove = Vector2.right;
+            return Vector2.zero;
+        }
+
+        _averageNormal = Vector2.zero;
+        RaycastHit2D guidenHit = _hits[_hits.Count / 2];
+        RaycastHit2D mainHit = _hits[_hits.Count / 2];
+
+        if (inputDirection > 0)
+            guidenHit = _hits[_hits.Count - 1];
+        else if (inputDirection < 0)
+            guidenHit = _hits[0];
+
+        Vector2 avergeNormal = (guidenHit.normal + mainHit.normal) / 2;
+
+        _directionMove = new Vector2(avergeNormal.y, -avergeNormal.x).normalized;
+
+        Debug.DrawRay(transform.position, _directionMove * 2f, Color.green, 0.1f);
+
+        return avergeNormal;
+    }
+
+    private void DefineSurface()
     {
         _hits.Clear();
 
@@ -63,27 +88,5 @@ public class DefinedSurfacePlayer : MonoBehaviour
 
 
         _isGrounded = _hits.Count > 0;
-    }
-
-    private void DefineAngel()
-    {
-        if (_hits.Count == 0)
-        {
-            _directionMove = Vector2.right;
-            return;
-        }
-
-        Vector2 averageNormal = Vector2.zero;
-
-        foreach (RaycastHit2D hit in _hits)
-        {
-            averageNormal += hit.normal;
-        }
-
-        averageNormal = (averageNormal / _hits.Count).normalized;
-
-        _directionMove = new Vector2(averageNormal.y, -averageNormal.x).normalized;
-
-        Debug.DrawRay(transform.position, _directionMove * 2f, Color.green, 0.1f);
     }
 }

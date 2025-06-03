@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Jumper _jumper;
     [SerializeField] private DefinedSurfacePlayer _definedSurfacePlayer;
     [SerializeField] private AnimatorPlayer _animatorPlayer;
+    [SerializeField] private PhysicsPlayer _physicsPlayer;
 
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
@@ -32,9 +33,16 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (_jumper.IsJump == false && _inputReader.IsMove == false || _jumper.IsJump == false && _definedSurfacePlayer.IsGrounded == false)      
-            _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);
-
+        if (_definedSurfacePlayer.IsGrounded && _inputReader.IsMove == false && _jumper.IsJump == false)
+        {
+            _rigidbody.velocity = Vector2.zero;
+            _rigidbody.drag = 1000000;
+        }
+        else
+        {
+            _rigidbody.drag = 0;
+        }
+            
         bool shouldMove = _jumper.IsJump == false && _inputReader.IsMove && _definedSurfacePlayer.IsGrounded;
         _animatorPlayer.SetMoveAnimation(shouldMove);
 
@@ -47,12 +55,26 @@ public class Player : MonoBehaviour
         _spriteRenderer.flipX = inputDirection < 0;
 
         if (_jumper.IsJump == false && _definedSurfacePlayer.IsGrounded)
-            _mover.Move(inputDirection, _definedSurfacePlayer.DirectionMove);
+        {
+            Vector2 direction = GetDirectionMove(inputDirection);
+
+            _mover.Move(direction);
+
+            _rigidbody.AddForce(Vector2.down * 4);
+        }
     }
 
     private void OnJumpInput(float inputDirection)
     {
         if (_definedSurfacePlayer.IsGrounded && _jumper.IsJump == false)
             _jumper.Jump(inputDirection);
+    }
+
+    private Vector2 GetDirectionMove(float inputDirection)
+    {
+        Vector2 angelNormal = _definedSurfacePlayer.DefineAngel(inputDirection);
+        Vector2 angelMove = new Vector2(angelNormal.y, -angelNormal.x).normalized;
+
+        return angelMove * inputDirection;
     }
 }

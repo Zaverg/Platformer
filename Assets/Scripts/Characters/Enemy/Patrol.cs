@@ -20,10 +20,11 @@ public class Patrol : MonoBehaviour
 
     private void Update()
     {
-        PatrolArea();
+
+        TryUpdateTarget();
     }
 
-    private void PatrolArea()
+    private void TryUpdateTarget()
     {
         if (Mathf.Abs(_currentTarget.position.x - transform.position.x) <= _arrivalDistance)
         {

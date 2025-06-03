@@ -7,16 +7,17 @@ public class Mover : MonoBehaviour
     [SerializeField] private float _climbForce = 10f;
 
     private Rigidbody2D _rigidbody;
-    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public void Move(float inputDirection, Vector2 surfaceDirection)
+    public void Move(Vector2 direction)
     {
-        _rigidbody.AddForce(surfaceDirection * inputDirection * _speed * _climbForce);
-        _rigidbody.velocity = Vector2.ClampMagnitude(_rigidbody.velocity, _speed);  
+        _rigidbody.AddForce(direction * _speed * _climbForce);
+        _rigidbody.velocity = Vector2.ClampMagnitude(_rigidbody.velocity, _speed);
+
+        Debug.DrawRay(transform.position, direction * 2f, Color.green, 0.1f);
     }
 }
