@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Thorns : Enemy
 {
@@ -14,19 +15,21 @@ public class Thorns : Enemy
     private Transform _currentTarget;
     private State _currentState;
 
+    private float _currentSpeed;
+
     private void OnEnable()
     {
-        
+        _detectionZone.Detected += DoChase;
     }
 
     private void OnDisable()
     {
-        
+        _detectionZone.Detected -= DoChase;
     }
 
     private void Update()
     {
-       
+        Move();
     }
 
     public override void TakeDamage(float damage)
@@ -34,11 +37,36 @@ public class Thorns : Enemy
         base.TakeDamage(damage);
     }
 
-    private void TryUpdateTarget(State state)
+    protected override void Move()
     {
-        if (CheckTargetDistance(_currentTarget, state.ArrivalDistance))
+        transform.position = Vector3.MoveTowards(transform.position, _currentTarget.position, _currentSpeed * Time.deltaTime);
+    }
+
+    private void DoPatrol()
+    {
+        Debug.Log("Patrol");
+        Patrol patrol = _currentState as Patrol;
+
+        if (patrol != null)
         {
-            state.ChangeTarget(_currentTarget);
+            _currentTarget = patrol.TryUpdateTarget(_currentTarget);
         }
     }
+
+    private void DoChase(Transform target)
+    {
+        _currentState = _chase;
+        _currentTarget = target;
+    }
+
+    private void DoAttack()
+    {
+
+    }
+
+    protected override void ChangeState()
+    {
+        throw new NotImplementedException();
+    }
+
 }
