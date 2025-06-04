@@ -1,72 +1,40 @@
-using System;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Thorns : Enemy
 {
     [SerializeField] private Patrol _patrol;
     [SerializeField] private Chase _chase;
+    [SerializeField] private Attack _attack;
 
-    [SerializeField] private DetectionZone _detectionZone;
-    [SerializeField] private DefinedSurfacePlayer _definedSurface;
+    [SerializeField] private State _currentState;
 
-    protected override float CurrentHealthPoints { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-    private Transform _currentTarget;
-    private State _currentState;
-
-    private float _currentSpeed;
-
-    private void OnEnable()
+    private void Awake()
     {
-        _detectionZone.Detected += DoChase;
-    }
-
-    private void OnDisable()
-    {
-        _detectionZone.Detected -= DoChase;
+        _currentState = _patrol.CanRun() ? _patrol : null;
     }
 
     private void Update()
     {
-        Move();
+        _currentState.Run();
+        TryChangeState();
     }
 
-    public override void TakeDamage(float damage)
+    protected override void TryChangeState()
     {
-        base.TakeDamage(damage);
-    }
+        bool canChase = _chase.CanRun();
+        bool canAttack = _attack.CanRun();
 
-    protected override void Move()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, _currentTarget.position, _currentSpeed * Time.deltaTime);
-    }
-
-    private void DoPatrol()
-    {
-        Debug.Log("Patrol");
-        Patrol patrol = _currentState as Patrol;
-
-        if (patrol != null)
+        if ((canChase == false && canAttack == false) && _currentState != _patrol)
         {
-            _currentTarget = patrol.TryUpdateTarget(_currentTarget);
+            _currentState = _patrol;
+        }
+        else if (canChase && canAttack == false && _currentState != _chase)
+        {
+            _currentState = _chase;
+        }
+        else if (canAttack)
+        {
+            _currentState = _attack;
         }
     }
-
-    private void DoChase(Transform target)
-    {
-        _currentState = _chase;
-        _currentTarget = target;
-    }
-
-    private void DoAttack()
-    {
-
-    }
-
-    protected override void ChangeState()
-    {
-        throw new NotImplementedException();
-    }
-
 }

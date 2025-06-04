@@ -73,11 +73,13 @@
     <Compile Include="Assets\Scripts\Characters\Player\Mover.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Jumper.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\DefinedSurfacePlayer.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemy\MoverEnemy.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\PhysicsPlayer.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\InputReader.cs" />
     <Compile Include="Assets\Scripts\Enviroment\DefineSurface.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\CoinTaker.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Chase.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemy\Attack.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

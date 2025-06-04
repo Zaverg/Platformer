@@ -1,9 +1,9 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Patrol : State
 {
+    [SerializeField] private MoverEnemy _moverEnemy;
     [SerializeField] private float _speedPatrol;
 
     [SerializeField] private List<Transform> _pointToPatrols = new List<Transform>();
@@ -11,26 +11,31 @@ public class Patrol : State
 
     private Transform _currentTarget;
 
-    public StateName StateName => StateName.Patrol;
-
     public Transform CurrentTarget => _currentTarget;
     public float Speed => _speedPatrol;
     public float ArrivalDistance => _arrivalDistance;
 
-    private void Start()
+    public override bool CanRun()
     {
         _currentTarget = _pointToPatrols[0];
+
+        _moverEnemy.SetSpeed(_speedPatrol);
+        _moverEnemy.SetTarget(_currentTarget);
+        
+        return true;
     }
 
-    public Transform TryUpdateTarget(Transform currentTarget)
+    public override void Run()
     {
-        if (Mathf.Abs(currentTarget.position.x - transform.position.x) <= _arrivalDistance)
+        if (Mathf.Abs(_currentTarget.position.x - transform.position.x) <= _arrivalDistance)
         {
             int index = (_pointToPatrols.IndexOf(_currentTarget) + 1) % (_pointToPatrols.Count);
 
-            return _pointToPatrols[index];
+            _currentTarget = _pointToPatrols[index];
+
+            _moverEnemy.SetTarget(_currentTarget);
         }
 
-        return currentTarget;
+        _moverEnemy.Move();
     }
 }
