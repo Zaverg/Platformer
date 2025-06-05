@@ -1,16 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Thorns : Enemy
 {
-    [SerializeField] private Patrol _patrol;
-    [SerializeField] private Chase _chase;
-    [SerializeField] private Attack _attack;
+    [SerializeField] private List<State> _states = new List<State>();
 
     [SerializeField] private State _currentState;
 
     private void Awake()
     {
-        _currentState = _patrol.CanRun() ? _patrol : null;
+        _currentState = _states[2];
+        _currentState.Enter();
     }
 
     private void Update()
@@ -21,20 +21,16 @@ public class Thorns : Enemy
 
     protected override void TryChangeState()
     {
-        bool canChase = _chase.CanRun();
-        bool canAttack = _attack.CanRun();
+        foreach (State state in _states)
+        {
+            if (state.CanTransaction(_currentState))
+            {
+                _currentState.Exit();
+                _currentState = state;
+                _currentState.Enter();
 
-        if ((canChase == false && canAttack == false) && _currentState != _patrol)
-        {
-            _currentState = _patrol;
-        }
-        else if (canChase && canAttack == false && _currentState != _chase)
-        {
-            _currentState = _chase;
-        }
-        else if (canAttack)
-        {
-            _currentState = _attack;
+                break;
+            }
         }
     }
 }

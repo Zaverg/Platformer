@@ -19,6 +19,12 @@ public class Chase : State
         _detectionZone.Detected -= SetTarget;
     }
 
+    public override void Enter()
+    {
+        _moverEnemy.SetTarget(_player.transform);
+        _moverEnemy.SetSpeed(_speed);
+    }
+
     public override void Run()
     {
         if ((_player.transform.position - transform.position).sqrMagnitude > _chaseDistance * _chaseDistance)
@@ -27,19 +33,18 @@ public class Chase : State
             _moverEnemy.Move();
     }
 
-    public override bool CanRun()
+    public override bool CanTransaction(State state)
     {
-        bool canRun = false;
+        if (state == this || _player == null)
+            return false;
 
-        if (_player != null)
-        {
-            canRun = true;
-            _moverEnemy.SetTarget(_player.transform);
-            _moverEnemy.SetSpeed(_speed);
-        }
+        return true;
+    }
 
-        return canRun;
-    } 
+    public override void Exit()
+    {
+        _player = null;
+    }
 
     private void SetTarget(Player player)
     {

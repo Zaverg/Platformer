@@ -194,9 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad15f6f9250ad1c4b8716c0b20aee7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patrol: {fileID: 734951060829201718}
-  _chase: {fileID: 7564569549589346614}
-  _attack: {fileID: 8047210731445313811}
+  _states:
+  - {fileID: 734951060829201718}
+  - {fileID: 7564569549589346614}
+  - {fileID: 8047210731445313811}
   _currentState: {fileID: 0}
 --- !u!114 &7564569549589346614
 MonoBehaviour:

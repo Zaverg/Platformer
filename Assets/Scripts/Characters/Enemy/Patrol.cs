@@ -11,16 +11,18 @@ public class Patrol : State
 
     private Transform _currentTarget;
 
-    public Transform CurrentTarget => _currentTarget;
-    public float Speed => _speedPatrol;
-    public float ArrivalDistance => _arrivalDistance;
-
-    public override bool CanRun()
+    public override void Enter()
     {
         _currentTarget = _pointToPatrols[0];
 
         _moverEnemy.SetSpeed(_speedPatrol);
         _moverEnemy.SetTarget(_currentTarget);
+    }
+
+    public override bool CanTransaction(State currentState)
+    {
+        if (currentState == this)
+            return false;
         
         return true;
     }
@@ -37,5 +39,10 @@ public class Patrol : State
         }
 
         _moverEnemy.Move();
+    }
+
+    public override void Exit()
+    {
+        _currentTarget = null;
     }
 }

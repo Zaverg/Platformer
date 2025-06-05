@@ -17,20 +17,29 @@ public class Attack : State
         _detectionZone.Detected -= SetTarget;
     }
 
+    public override void Enter()
+    {
+        
+    }
+
     public override void Run()
     {
         Debug.Log("Attack");
     }
 
-    public override bool CanRun()
+    public override bool CanTransaction(State current)
     {
-        if (_player == null)
+        if (current == this || _player == null)
             return false;
-
-        if ((_player.transform.position - transform.position).sqrMagnitude > _attackDistance * _attackDistance)
+        else if ((_player.transform.position - transform.position).sqrMagnitude > _attackDistance * _attackDistance)
             return false;
 
         return true;
+    }
+
+    public override void Exit()
+    {
+        _player = null;
     }
 
     private void SetTarget(Player player)
