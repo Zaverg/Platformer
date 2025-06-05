@@ -6,5 +6,5 @@ public abstract class State : MonoBehaviour
     public abstract void Run();
     public abstract void Exit();
 
-    public abstract bool CanTransaction(State currentState);
+    public abstract bool CanTransaction();
 }

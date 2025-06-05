@@ -19,11 +19,8 @@ public class Patrol : State
         _moverEnemy.SetTarget(_currentTarget);
     }
 
-    public override bool CanTransaction(State currentState)
+    public override bool CanTransaction()
     {
-        if (currentState == this)
-            return false;
-        
         return true;
     }
 

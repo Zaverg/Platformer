@@ -7,7 +7,7 @@ public class Chase : State
     [SerializeField] private DetectionZone _detectionZone;
     [SerializeField] private float _chaseDistance;
 
-    private Player _player;
+    [SerializeField] private Player _player;
 
     private void OnEnable()
     {
@@ -33,9 +33,9 @@ public class Chase : State
             _moverEnemy.Move();
     }
 
-    public override bool CanTransaction(State state)
+    public override bool CanTransaction()
     {
-        if (state == this || _player == null)
+        if (_player == null)
             return false;
 
         return true;
@@ -43,7 +43,7 @@ public class Chase : State
 
     public override void Exit()
     {
-        _player = null;
+       
     }
 
     private void SetTarget(Player player)

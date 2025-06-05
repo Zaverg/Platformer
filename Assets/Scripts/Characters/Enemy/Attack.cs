@@ -27,9 +27,9 @@ public class Attack : State
         Debug.Log("Attack");
     }
 
-    public override bool CanTransaction(State current)
+    public override bool CanTransaction()
     {
-        if (current == this || _player == null)
+        if (_player == null)
             return false;
         else if ((_player.transform.position - transform.position).sqrMagnitude > _attackDistance * _attackDistance)
             return false;
@@ -39,7 +39,7 @@ public class Attack : State
 
     public override void Exit()
     {
-        _player = null;
+        
     }
 
     private void SetTarget(Player player)

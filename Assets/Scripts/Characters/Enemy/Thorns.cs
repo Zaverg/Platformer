@@ -23,14 +23,17 @@ public class Thorns : Enemy
     {
         foreach (State state in _states)
         {
-            if (state.CanTransaction(_currentState))
+            if (state.CanTransaction() == false)
+                continue;
+
+            if (_currentState != state)
             {
                 _currentState.Exit();
                 _currentState = state;
                 _currentState.Enter();
-
-                break;
             }
+
+            break;
         }
     }
 }
