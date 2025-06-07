@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6624564126413614027}
   - component: {fileID: 8340856245885031355}
   - component: {fileID: 8696800481887347355}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,8 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628528d703b2d374dbc3ecbfee666f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDistance: 1
-  _attackDelay: 4
+  _attackDistance: 1.5
+  _attackDelay: 1
   _damage: 10
   _attacker: {fileID: 6874244591112427379}
   _detectionZone: {fileID: 8696800481887347355}
@@ -414,7 +414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1208898991542345669}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GroundChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

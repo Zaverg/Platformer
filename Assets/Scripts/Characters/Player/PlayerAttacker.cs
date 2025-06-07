@@ -7,9 +7,18 @@ public class PlayerAttacker : MonoBehaviour
     [SerializeField] private float _damage;
     [SerializeField] private float _distance;
     [SerializeField] private float _attackDelay;
+    [SerializeField] private AnimatorPlayer _animator;
 
-    public void Attack()
+    private float _lastAttack;
+    private bool CanAttack => Time.time >= _lastAttack + _attackDelay;
+
+    public void Attack(Vector2 direction)
     {
-        _attacker.Attack(_damage, _distance);
+        if (CanAttack == false)
+            return;
+
+        _animator.SetAttackAnimation();
+        _attacker.Attack(_damage, _distance, direction);
+        _lastAttack = Time.time;
     }
 }

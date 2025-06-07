@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Characters\Player\DefinedGround.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\AnimatorPlayer.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\SpawnEnviroment.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\PlayerAttacker.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Patrol.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\State.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\Characters\IDamageble.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\CoinTaker.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Chase.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\SpawnHealth.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

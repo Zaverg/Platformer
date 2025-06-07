@@ -46,13 +46,18 @@ public class AttackerEnemy : State
     {
         if (_startAttack + _attackDelay <= Time.time)
         {
+            _animator.SetPreparingForAttackAnimation(false);
             _isAttack = true;
-            _attacker.Attack(_damage, _attackDistance);
+
+            Vector2 directionToPlayer = (_player.transform.position - transform.position).normalized;
+            _attacker.Attack(_damage, _attackDistance, directionToPlayer);
+
             _startAttack = Time.time;
         }
         else if (_isAttack)
         {
             _isAttack = false;
+            _animator.SetPreparingForAttackAnimation(true);
         }
 
         _animator.SetAttackAnimation(_isAttack);

@@ -3825,7 +3825,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -100
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.73208904, y: 1.6197884, z: 0}
   m_MaxChunkCount: 16
@@ -4237,9 +4237,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attacker: {fileID: 1225042973}
-  _damage: 10
-  _distance: 2
-  _attackDelay: 2
+  _damage: 25
+  _distance: 1
+  _attackDelay: 0.5
+  _animator: {fileID: 1225042976}
+--- !u!114 &1225042976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5130276542694150702, guid: 3c0b3f76fcc761e49bbcec40b1b26b1a, type: 3}
+  m_PrefabInstance: {fileID: 5765234171671146173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225042937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc476420829c35946b359379fe11d08a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1396388036
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,10 +4847,6 @@ PrefabInstance:
     - target: {fileID: 4956440628502765919, guid: 70c39b6f542ef5a44af3e5b2590f5c46, type: 3}
       propertyPath: m_Name
       value: Thorns
-      objectReference: {fileID: 0}
-    - target: {fileID: 8047210731445313811, guid: 70c39b6f542ef5a44af3e5b2590f5c46, type: 3}
-      propertyPath: _attackDistance
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

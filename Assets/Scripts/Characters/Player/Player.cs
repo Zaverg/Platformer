@@ -68,7 +68,8 @@ public class Player : MonoBehaviour
 
     private void OnAttackInput()
     {
-        _attacker.Attack();
-        _animatorPlayer.SetAttackAnimation();
+        Vector2 direction = _spriteRenderer.flipX ? Vector2.left : Vector2.right;
+
+        _attacker.Attack(direction);
     }
 }
