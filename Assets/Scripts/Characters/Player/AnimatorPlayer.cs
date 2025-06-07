@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -5,6 +6,7 @@ public class AnimatorPlayer : MonoBehaviour
 {
     private static readonly int s_move = Animator.StringToHash("IsMove");
     private static readonly int s_jump = Animator.StringToHash("IsJump");
+    private static readonly int s_attack = Animator.StringToHash("Attack");
 
     private Animator _animator;
 
@@ -21,5 +23,10 @@ public class AnimatorPlayer : MonoBehaviour
     public void SetJumpAnimation(bool isJump)
     {
         _animator.SetBool(s_jump, isJump);
+    }
+
+    public void SetAttackAnimation()
+    {
+        _animator.SetTrigger(s_attack);
     }
 }

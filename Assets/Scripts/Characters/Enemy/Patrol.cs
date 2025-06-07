@@ -40,6 +40,7 @@ public class Patrol : State
 
     public override void Exit()
     {
-        _currentTarget = null;
+        _moverEnemy.SetSpeed(0);
+        _moverEnemy.SetTarget(null);
     }
 }

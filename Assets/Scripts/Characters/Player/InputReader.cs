@@ -7,11 +7,13 @@ public class InputReader : MonoBehaviour
 
     [SerializeField] private KeyCode _jumpButton;
 
+    private int _mouseButtonAttack = 0;
     private float _inputDirection;
 
     public event Action<float> Jumped;
     public event Action<float> Moved;
-    
+    public event Action Attacked;
+
     public bool IsMove => _inputDirection != 0;
 
     private void Update()
@@ -26,6 +28,11 @@ public class InputReader : MonoBehaviour
         if (IsMove)
         {
             Moved?.Invoke(_inputDirection);
+        }
+
+        if (Input.GetMouseButtonDown(_mouseButtonAttack))
+        {
+            Attacked?.Invoke();
         }
     }
 }

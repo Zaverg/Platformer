@@ -6,9 +6,9 @@ public class Player : MonoBehaviour
     [SerializeField] private InputReader _inputReader;
     [SerializeField] private Mover _mover;
     [SerializeField] private Jumper _jumper;
-    [SerializeField] private DefinedSurfacePlayer _definedSurfacePlayer;
+    [SerializeField] private PlayerAttacker _attacker;
+    [SerializeField] private DefinedGround _definedSurfacePlayer;
     [SerializeField] private AnimatorPlayer _animatorPlayer;
-    [SerializeField] private PhysicsPlayer _physicsPlayer;
 
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
@@ -23,24 +23,21 @@ public class Player : MonoBehaviour
     {
         _inputReader.Jumped += OnJumpInput;
         _inputReader.Moved += OnMovementInput;
+        _inputReader.Attacked += OnAttackInput;
     }
 
     private void OnDisable()
     {
         _inputReader.Jumped -= OnJumpInput;
         _inputReader.Moved -= OnMovementInput;
+        _inputReader.Attacked -= OnAttackInput;
     }
 
     private void Update()
     {
-        if (_definedSurfacePlayer.IsGrounded && _inputReader.IsMove == false && _jumper.IsJump == false)
+        if (_definedSurfacePlayer.IsGrounded == false && _jumper.IsJump == false || _inputReader.IsMove == false && _jumper.IsJump == false)
         {
-            _rigidbody.velocity = Vector2.zero;
-            _rigidbody.drag = 1000000;
-        }
-        else
-        {
-            _rigidbody.drag = 0;
+            _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);
         }
             
         bool shouldMove = _jumper.IsJump == false && _inputReader.IsMove && _definedSurfacePlayer.IsGrounded;
@@ -56,8 +53,7 @@ public class Player : MonoBehaviour
 
         if (_jumper.IsJump == false && _definedSurfacePlayer.IsGrounded)
         {
-            Vector2 direction = GetDirectionMove(inputDirection);
-
+            Vector2 direction = Vector2.right * inputDirection;
             _mover.Move(direction);
 
             _rigidbody.AddForce(Vector2.down * 4);
@@ -70,11 +66,9 @@ public class Player : MonoBehaviour
             _jumper.Jump(inputDirection);
     }
 
-    private Vector2 GetDirectionMove(float inputDirection)
+    private void OnAttackInput()
     {
-        Vector2 angelNormal = _definedSurfacePlayer.DefineAngel(inputDirection);
-        Vector2 angelMove = new Vector2(angelNormal.y, -angelNormal.x).normalized;
-
-        return angelMove * inputDirection;
+        _attacker.Attack();
+        _animatorPlayer.SetAttackAnimation();
     }
 }

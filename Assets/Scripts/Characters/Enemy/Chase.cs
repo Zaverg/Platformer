@@ -5,9 +5,17 @@ public class Chase : State
     [SerializeField] private MoverEnemy _moverEnemy;
     [SerializeField] private float _speed;
     [SerializeField] private DetectionZone _detectionZone;
+    [SerializeField] private float _lostDistance;
     [SerializeField] private float _chaseDistance;
 
     [SerializeField] private Player _player;
+
+    private Vector3 _startPositioin;
+
+    private void Start()
+    {
+        _startPositioin = transform.position;
+    }
 
     private void OnEnable()
     {
@@ -27,7 +35,10 @@ public class Chase : State
 
     public override void Run()
     {
-        if ((_player.transform.position - transform.position).sqrMagnitude > _chaseDistance * _chaseDistance)
+        bool isLost = (_player.transform.position - transform.position).sqrMagnitude > _lostDistance * _lostDistance;
+        bool isAway = (_startPositioin - transform.position).sqrMagnitude > _chaseDistance * _chaseDistance;
+
+        if (isLost || isAway)
             _player = null;
         else
             _moverEnemy.Move();
@@ -43,7 +54,8 @@ public class Chase : State
 
     public override void Exit()
     {
-       
+        _moverEnemy.SetTarget(null);
+        _moverEnemy.SetSpeed(0);
     }
 
     private void SetTarget(Player player)

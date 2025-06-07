@@ -1,20 +1,32 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class MoverEnemy : MonoBehaviour
 {
-    private Transform _currentTarget;
+   [SerializeField] private Transform _currentTarget;
     private float _speed;
+
+    private Rigidbody2D _rigidbody2D;
+    private DefinedGround _definedGround;
 
     private void Awake()
     {
-        _currentTarget = null;    
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _currentTarget = null;
     }
 
     public void Move()
     {
-        if (_currentTarget != null) 
-            transform.position = Vector3.MoveTowards(transform.position, _currentTarget.transform.position, _speed * Time.deltaTime);
-    }
+        if (_currentTarget != null)
+        {
+            Vector2 direction = (_currentTarget.position - transform.position).normalized;
+            _rigidbody2D.velocity = new Vector2(direction.x * _speed, _rigidbody2D.velocity.y);
+        }
+        else
+        {
+            _rigidbody2D.velocity = Vector2.zero;
+        }
+}
 
     public void SetTarget(Transform target)
     {
