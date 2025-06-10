@@ -9,19 +9,10 @@ public class DefineSurface : MonoBehaviour
     [SerializeField] private Tilemap _tileMap;
     private List<Vector2> _surface;
 
-    private void Awake()
-    {
-        _surface = new List<Vector2>();
-    }
-
-    private void Start()
-    {
-        Define();
-    }
-
-    private void Define()
+    public List<Vector2> Define()
     {
         BoundsInt bounds = _tileMap.cellBounds;
+        _surface = new List<Vector2>();
 
         for (int x = bounds.min.x; x < bounds.max.x; x++)
         {
@@ -38,6 +29,8 @@ public class DefineSurface : MonoBehaviour
                 }
             }
         }
+
+        return new List<Vector2>(_surface);
     }
 
     public List<Vector2> GetSurface() =>

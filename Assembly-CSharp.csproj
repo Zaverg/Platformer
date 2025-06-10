@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Characters\Player\AnimatorPlayer.cs" />
     <Compile Include="Assets\Scripts\Enviroment\SpawnEnviroment.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\PlayerAttacker.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\IEnviroment.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Patrol.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\State.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\DetectionZone.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Scripts\Characters\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Characters\Attacker.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Thorns.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\SpawnCoins2.cs" />
     <Compile Include="Assets\Scripts\Enviroment\Coin.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Mover.cs" />

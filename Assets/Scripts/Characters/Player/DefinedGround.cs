@@ -11,14 +11,9 @@ public class DefinedGround  : MonoBehaviour
     private int _countRays = 3;
     private List<RaycastHit2D> _hits;
 
-    private Vector2 _directionMove;
-    private Vector2 _averageNormal;
-
     private bool _isGrounded;
 
     public bool IsGrounded => _isGrounded;
-    public Vector2 DirectionMove => _directionMove;
-    public Vector2 AverageNormal => _averageNormal;
 
     private void Awake()
     {

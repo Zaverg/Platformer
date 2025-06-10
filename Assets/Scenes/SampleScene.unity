@@ -3492,6 +3492,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 986134205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &363075999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 363076001}
+  - component: {fileID: 363076000}
+  m_Layer: 0
+  m_Name: SpawnEniroment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &363076000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363075999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b921ea5d5b32c2a428f020a6e0566964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defineSurface: {fileID: 97857347}
+  _spawnCoins: {fileID: 1111029976}
+--- !u!4 &363076001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363075999}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.4175315, y: -1.5945073, z: 0.111892745}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &458279837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3713,7 +3759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1111029975}
-  - component: {fileID: 1111029974}
+  - component: {fileID: 1111029976}
   m_Layer: 0
   m_Name: SpawnCoins
   m_TagString: Untagged
@@ -3721,22 +3767,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1111029974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1111029973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3d1e016958d6b749aa7fb8d129452c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _defineSurface: {fileID: 97857347}
-  _chaseSpawn: 60
-  _coin: {fileID: 4513344299902949660, guid: b085f8e2812971c499deef6d359a9e10, type: 3}
-  _respawnDelay: 4
 --- !u!4 &1111029975
 Transform:
   m_ObjectHideFlags: 0
@@ -3752,6 +3782,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1111029976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111029973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a704f4c6f28e65448733fa1597821ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coinPrefab: {fileID: 4513344299902949660, guid: b085f8e2812971c499deef6d359a9e10, type: 3}
+  _countCoins: 38
+  _minCountInStep: 3
+  _maxCountInStep: 9
+  _respawnDelay: 4
+  _minIndent: 2
+  _maxIndent: 0
+  _steps: 
+  _coins: []
+  _inhabitedSurface: []
 --- !u!1 &1159161797
 GameObject:
   m_ObjectHideFlags: 0
@@ -4942,3 +4994,4 @@ SceneRoots:
   - {fileID: 986134205}
   - {fileID: 1111029975}
   - {fileID: 97857348}
+  - {fileID: 363076001}
