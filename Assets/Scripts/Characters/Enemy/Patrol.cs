@@ -19,11 +19,6 @@ public class Patrol : State
         _moverEnemy.SetTarget(_currentTarget);
     }
 
-    public override bool CanTransaction()
-    {
-        return true;
-    }
-
     public override void Run()
     {
         if (Mathf.Abs(_currentTarget.position.x - transform.position.x) <= _arrivalDistance)

@@ -43,15 +43,9 @@ public class DefinedGround  : MonoBehaviour
             _surfaceCheckDistance,
             _groundLayer);
 
-            Debug.DrawRay(rayStart, hit.normal, Color.red, 0.1f);
-
-            Debug.DrawRay(rayStart, Vector2.down * _surfaceCheckDistance, Color.blue, 0.1f);
-
             if (hit.collider != null)
             {
                 _hits.Add(hit);
-                
-                Debug.DrawRay(hit.point, hit.normal, Color.red, 0.1f);
             }
         }
 

@@ -199,10 +199,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad15f6f9250ad1c4b8716c0b20aee7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defaltState: {fileID: 734951060829201718}
   _states:
   - {fileID: 8047210731445313811}
   - {fileID: 7564569549589346614}
-  - {fileID: 734951060829201718}
   _currentState: {fileID: 0}
 --- !u!114 &7564569549589346614
 MonoBehaviour:
@@ -217,11 +217,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moverEnemy: {fileID: 412840473373226609}
-  _speed: 3
   _detectionZone: {fileID: 8696800481887347355}
+  _player: {fileID: 0}
+  _speed: 3
   _lostDistance: 3
   _chaseDistance: 5
-  _player: {fileID: 0}
 --- !u!114 &8047210731445313811
 MonoBehaviour:
   m_ObjectHideFlags: 0

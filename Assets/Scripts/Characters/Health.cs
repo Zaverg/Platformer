@@ -26,6 +26,18 @@ public class Health : MonoBehaviour, IDamageble
         TryDie();
     }
 
+    public void Heal(float heal)
+    {
+        if(_currentHealth + heal <= _maxHealth)
+        {
+            _currentHealth += heal;
+        }
+        else
+        {
+            _currentHealth = _maxHealth;
+        }
+    }
+
     private void TryDie()
     {
         if (_currentHealth <= 0)

@@ -1,8 +1,7 @@
-using System.Collections;
 using UnityEngine;
 
 [RequireComponent (typeof(Rigidbody2D))]
-public class AttackerEnemy : State
+public class AttackerEnemy : State, ITransaction
 {
     [SerializeField] private float _attackDistance;
     [SerializeField] private float _attackDelay;
@@ -63,7 +62,7 @@ public class AttackerEnemy : State
         _animator.SetAttackAnimation(_isAttack);
     }
 
-    public override bool CanTransaction()
+    public bool CanTransaction()
     {
         if (_player == null)
         {

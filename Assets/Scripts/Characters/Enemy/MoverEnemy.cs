@@ -3,11 +3,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoverEnemy : MonoBehaviour
 {
-   [SerializeField] private Transform _currentTarget;
-    private float _speed;
-
+    [SerializeField] private Transform _currentTarget; 
     private Rigidbody2D _rigidbody2D;
-    private DefinedGround _definedGround;
+
+    private float _speed;
 
     private void Awake()
     {

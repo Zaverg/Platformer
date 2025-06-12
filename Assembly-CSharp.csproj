@@ -62,33 +62,35 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Characters\Enemy\EnemyAnimator.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\DefinedGround.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Wallet.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\AnimatorPlayer.cs" />
-    <Compile Include="Assets\Scripts\Enviroment\SpawnEnviroment.cs" />
+    <Compile Include="Assets\Scripts\Items\Heal.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\PlayerAttacker.cs" />
-    <Compile Include="Assets\Scripts\Enviroment\IEnviroment.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Patrol.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\State.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\DetectionZone.cs" />
-    <Compile Include="Assets\Scripts\Enviroment\SpawnCoins.cs" />
+    <Compile Include="Assets\Scripts\Items\SpawnHealth.cs" />
     <Compile Include="Assets\Scripts\Characters\Health.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Items\Coin.cs" />
+    <Compile Include="Assets\Scripts\Items\ITaking.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Taker.cs" />
     <Compile Include="Assets\Scripts\Characters\Attacker.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Thorns.cs" />
-    <Compile Include="Assets\Scripts\Enviroment\SpawnCoins2.cs" />
-    <Compile Include="Assets\Scripts\Enviroment\Coin.cs" />
+    <Compile Include="Assets\Scripts\Items\SpawnCoins.cs" />
+    <Compile Include="Assets\Scripts\Items\SpawnItems.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemy\ITransaction.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Mover.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\AttackerEnemy.cs" />
+    <Compile Include="Assets\Scripts\Items\IItemsSpawner.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Jumper.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\MoverEnemy.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\PhysicsPlayer.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\InputReader.cs" />
-    <Compile Include="Assets\Scripts\Enviroment\DefineSurface.cs" />
+    <Compile Include="Assets\Scripts\Items\DefineSurface.cs" />
     <Compile Include="Assets\Scripts\Characters\IDamageble.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\CoinTaker.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Chase.cs" />
-    <Compile Include="Assets\Scripts\Enviroment\SpawnHealth.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

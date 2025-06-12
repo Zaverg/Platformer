@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class SpawnCoins2 : MonoBehaviour, IEnviroment
+public class SpawnCoins : MonoBehaviour, IItemsSpawner
 {
     [SerializeField] private Coin _coinPrefab;
 
@@ -14,25 +13,22 @@ public class SpawnCoins2 : MonoBehaviour, IEnviroment
     [SerializeField] private float _respawnDelay;
 
     [SerializeField] private int _minIndent;
-    [SerializeField] private int _maxIndent;
 
+    [SerializeField] private float _xPositionCoin;
+    [SerializeField] private float _yPositionCoin;
+
+    private int _maxIndent;
     private float _maxPracentFillingMap = 80;
 
-    [SerializeField]  private List<int> _steps;
-
-    [SerializeField] private List<Coin> _coins;
-    [SerializeField] private List<Vector2> _inhabitedSurface;
+    private List<int> _steps;
+    private List<Coin> _coins;
+    private List<Vector2> _inhabitedSurface;
 
     private void Awake()
     {
         _steps = new List<int>();
         _inhabitedSurface = new List<Vector2>();
         _coins = new List<Coin>();
-    }
-
-    private void Start()
-    {
-     
     }
 
     private void OnDisable()
@@ -43,10 +39,12 @@ public class SpawnCoins2 : MonoBehaviour, IEnviroment
 
     public List<Vector2> InhabitedSurface(List<Vector2> freeSurface)
     {
-        CheckSpawnLimit(freeSurface);
+        List<Vector2> surface = new List<Vector2>(freeSurface);
+
+        ExceesdedSpawnLimit(surface);
         CreateSteps();
 
-        _maxIndent = (freeSurface.Count - _countCoins) / _steps.Count;
+        _maxIndent = (surface.Count - _countCoins) / _steps.Count;
 
         int startStep = Random.Range(_minIndent, _maxIndent);
 
@@ -54,29 +52,28 @@ public class SpawnCoins2 : MonoBehaviour, IEnviroment
         {
             for (int j = startStep; j < startStep + _steps[i]; j++)
             {
-                _inhabitedSurface.Add(freeSurface[j]);
+                _inhabitedSurface.Add(surface[j]);
             }
 
             startStep += _steps[i] + Random.Range(_minIndent, _maxIndent);
         }
 
-        for (int i = 0; i < freeSurface.Count; i++)
+        for (int i = 0; i < surface.Count; i++)
         {
-            if (_inhabitedSurface.Contains(freeSurface[i]))
+            if (_inhabitedSurface.Contains(surface[i]))
             {
-                freeSurface.RemoveAt(i);
+                surface.RemoveAt(i);
 
                 i--;
             }
         }
 
-        return freeSurface;
+        return surface;
     }
 
-    //rename
-    private void CheckSpawnLimit(List<Vector2> freeSurface)
+    private void ExceesdedSpawnLimit(List<Vector2> surface)
     {
-        float maxCount = freeSurface.Count * _maxPracentFillingMap / 100;
+        float maxCount = surface.Count * _maxPracentFillingMap / 100;
 
         if (_countCoins > maxCount)
         {
@@ -104,7 +101,7 @@ public class SpawnCoins2 : MonoBehaviour, IEnviroment
     {
         for (int i = 0; i < _inhabitedSurface.Count; i++)
         {
-            Coin coin = Instantiate(_coinPrefab, new Vector3(_inhabitedSurface[i].x + 0.5f, _inhabitedSurface[i].y + 1.5f, 0), Quaternion.identity);
+            Coin coin = Instantiate(_coinPrefab, new Vector3(_inhabitedSurface[i].x + _xPositionCoin, _inhabitedSurface[i].y + _yPositionCoin, 0), Quaternion.identity);
             coin.Took += DeleteCoin;
 
             _coins.Add(coin);

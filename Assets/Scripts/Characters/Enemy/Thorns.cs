@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class Thorns : Enemy
 {
+    [SerializeField] private State _defaltState;
     [SerializeField] private List<State> _states = new List<State>();
 
     [SerializeField] private State _currentState;
 
     private void Awake()
     {
-        _currentState = _states[2];
+        _currentState = _defaltState;
         _currentState.Enter();
     }
 
@@ -21,19 +22,30 @@ public class Thorns : Enemy
 
     protected override void TryChangeState()
     {
-        foreach (State state in _states)
+        bool isTrasaction = false;
+
+        foreach (ITransaction transaction in _states)
         {
-            if (state.CanTransaction() == false)
+            if (transaction.CanTransaction() == false)
                 continue;
 
-            if (_currentState != state)
+            isTrasaction = true;
+
+            if (_currentState != transaction as State)
             {
                 _currentState.Exit();
-                _currentState = state;
+                _currentState = transaction as State;
                 _currentState.Enter();
             }
 
             break;
+        }
+
+        if (isTrasaction == false && _currentState != _defaltState)
+        {
+            _currentState.Exit();
+            _currentState = _defaltState;
+            _currentState.Enter();
         }
     }
 }

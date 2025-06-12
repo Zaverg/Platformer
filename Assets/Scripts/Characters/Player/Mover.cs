@@ -17,7 +17,5 @@ public class Mover : MonoBehaviour
     {
         _rigidbody.AddForce(direction * _speed * _climbForce);
         _rigidbody.velocity = Vector2.ClampMagnitude(_rigidbody.velocity, _speed);
-
-        Debug.DrawRay(transform.position, direction * 2f, Color.green, 0.1f);
     }
 }

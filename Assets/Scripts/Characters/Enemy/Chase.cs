@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class Chase : State
+public class Chase : State, ITransaction
 {
-    [SerializeField] private MoverEnemy _moverEnemy;
-    [SerializeField] private float _speed;
+    [SerializeField] private MoverEnemy _moverEnemy; 
     [SerializeField] private DetectionZone _detectionZone;
+    [SerializeField] private Player _player;
+
+    [SerializeField] private float _speed;
     [SerializeField] private float _lostDistance;
     [SerializeField] private float _chaseDistance;
-
-    [SerializeField] private Player _player;
 
     private Vector3 _startPositioin;
 
@@ -44,7 +44,7 @@ public class Chase : State
             _moverEnemy.Move();
     }
 
-    public override bool CanTransaction()
+    public bool CanTransaction()
     {
         if (_player == null)
             return false;
