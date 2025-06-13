@@ -68,8 +68,8 @@
     <Compile Include="Assets\Scripts\Characters\Enemy\Patrol.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\State.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\DetectionZone.cs" />
+    <Compile Include="Assets\Scripts\Items\SpawnerCoins.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\DirectionOfView.cs" />
-    <Compile Include="Assets\Scripts\Items\SpawnHealth.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\GroundDetector.cs" />
     <Compile Include="Assets\Scripts\Characters\Health.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Player.cs" />
@@ -77,8 +77,7 @@
     <Compile Include="Assets\Scripts\Items\ITaking.cs" />
     <Compile Include="Assets\Scripts\Characters\Attacker.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Thorns.cs" />
-    <Compile Include="Assets\Scripts\Items\SpawnCoins.cs" />
-    <Compile Include="Assets\Scripts\Items\SpawnItems.cs" />
+    <Compile Include="Assets\Scripts\Items\SpawnerItems.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\IStateTransition.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Mover.cs" />
@@ -87,6 +86,7 @@
     <Compile Include="Assets\Scripts\Characters\Player\Jumper.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\MoverEnemy.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\ItemCollector.cs" />
+    <Compile Include="Assets\Scripts\Items\SpawnerHealth.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\InputReader.cs" />
     <Compile Include="Assets\Scripts\Characters\IDamageble.cs" />
     <Compile Include="Assets\Scripts\Items\SurfaceMapper.cs" />

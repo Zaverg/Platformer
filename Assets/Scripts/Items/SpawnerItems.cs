@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnItems : MonoBehaviour
+public class SpawnerItems : MonoBehaviour
 {
     [SerializeField] private SurfaceMapper _defineSurface;
-    [SerializeField] private SpawnCoins _spawnCoins;
-    [SerializeField] private SpawnHealth _spawnHeal;
+    [SerializeField] private SpawnerCoins _spawnCoins;
+    [SerializeField] private SpawnerHealth _spawnHeal;
 
     private List<Vector2> _freeSurface;
 

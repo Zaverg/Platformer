@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerAttacker _attacker;
     [SerializeField] private GroundDetector _definedSurfacePlayer;
     [SerializeField] private AnimatorPlayer _animatorPlayer;
+    [SerializeField] private Wallet _wallet;
+    [SerializeField] private Health _health;
 
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
@@ -45,6 +47,16 @@ public class Player : MonoBehaviour
 
         bool shouldJump = _jumper.IsJump && _definedSurfacePlayer.IsGrounded && _rigidbody.velocity.y > 0.1f;
         _animatorPlayer.SetJumpAnimation(shouldJump);
+    }
+
+    public void CollectMoney()
+    {
+        _wallet.TakeMoney();
+    }
+
+    public void UseHealPoition(float amountHeal)
+    {
+        _health.Heal(amountHeal);
     }
 
     private void OnMovementInput(float inputDirection)

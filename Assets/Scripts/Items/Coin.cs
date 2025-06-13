@@ -9,6 +9,6 @@ public class Coin : MonoBehaviour, ITaking
     {   
         Took?.Invoke(this);
 
-        player.GetComponent<Wallet>().TakeMoney();
+        player.CollectMoney();
     }
 }

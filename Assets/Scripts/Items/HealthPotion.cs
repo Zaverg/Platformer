@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HealthPotion : MonoBehaviour, ITaking
 {
-    private float healAmount = 20;
+    private float _healAmount = 20;
 
     public event Action<HealthPotion> Took;
 
@@ -11,6 +11,6 @@ public class HealthPotion : MonoBehaviour, ITaking
     {
         Took?.Invoke(this);
 
-        player.GetComponent<Health>().Heal(healAmount);
+        player.UseHealPoition(_healAmount);
     }
 }

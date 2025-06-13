@@ -6,8 +6,8 @@ public class Attacker : MonoBehaviour
 
     private Collider2D _hit;
 
-    Vector3 hitZonePosition;
-    Vector3 sizeZone;
+    private Vector3 hitZonePosition;
+    private Vector3 sizeZone;
 
     public void Attack(float damage, float attacDistance, Vector2 direction)
     {

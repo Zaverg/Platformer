@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnHealth : MonoBehaviour
+public class SpawnerHealth : MonoBehaviour
 {
     [SerializeField] private int _count;
     [SerializeField] private HealthPotion _healPrefab;
