@@ -1,6 +1,5 @@
-using UnityEngine;
 
-public class Skelet : Enemy
+public class Skeleton : Enemy
 {
     protected override void TryChangeState()
     {

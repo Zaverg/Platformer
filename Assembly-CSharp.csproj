@@ -90,7 +90,7 @@
     <Compile Include="Assets\Scripts\Characters\Player\InputReader.cs" />
     <Compile Include="Assets\Scripts\Characters\IDamageble.cs" />
     <Compile Include="Assets\Scripts\Items\SurfaceMapper.cs" />
-    <Compile Include="Assets\Scripts\Characters\Enemy\Skelet.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemy\Skeleton.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Chase.cs" />
     <Compile Include="Assets\Scripts\Items\HealthPotion.cs" />
   </ItemGroup>
