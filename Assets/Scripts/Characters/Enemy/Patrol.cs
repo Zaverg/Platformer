@@ -4,7 +4,8 @@ using UnityEngine;
 public class Patrol : State
 {
     [SerializeField] private MoverEnemy _moverEnemy;
-    [SerializeField] private float _speedPatrol;
+    [SerializeField] private EnemyAnimator _enemyAnimator;
+    [SerializeField] private float _speed;
 
     [SerializeField] private List<Transform> _pointToPatrols = new List<Transform>();
     [SerializeField] private float _arrivalDistance = 0.2f;
@@ -15,7 +16,8 @@ public class Patrol : State
     {
         _currentTarget = _pointToPatrols[0];
 
-        _moverEnemy.SetSpeed(_speedPatrol);
+        _enemyAnimator.SetMoveAnumation(true, _speed);
+        _moverEnemy.SetSpeed(_speed);
         _moverEnemy.SetTarget(_currentTarget);
     }
 
@@ -37,5 +39,6 @@ public class Patrol : State
     {
         _moverEnemy.SetSpeed(0);
         _moverEnemy.SetTarget(null);
+        _enemyAnimator.SetMoveAnumation(false, 0);
     }
 }

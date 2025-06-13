@@ -12,10 +12,11 @@ public class Attacker : MonoBehaviour
     public void Attack(float damage, float attacDistance, Vector2 direction)
     {
         hitZonePosition = (Vector2)transform.position + (direction.normalized * attacDistance);
-        sizeZone = new Vector2(2, 2);
+        sizeZone = new Vector2(attacDistance, attacDistance);
 
-        _hit = Physics2D.OverlapBox(hitZonePosition, sizeZone, 0, _layerAttack);
-        Debug.Log("Hit: " + _hit);
+        float angel = 0;
+
+        _hit = Physics2D.OverlapBox(hitZonePosition, sizeZone, angel, _layerAttack);
 
         if (_hit != null && _hit.TryGetComponent(out IDamageble character))
             character.TakeDamage(damage);

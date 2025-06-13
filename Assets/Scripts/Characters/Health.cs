@@ -22,8 +22,7 @@ public class Health : MonoBehaviour, IDamageble
             _currentHealth = 0;
         }
 
-        Debug.Log(gameObject.name + " take damage: " + damage + " HP: " + _currentHealth);
-        TryDie();
+        HandleDeath();
     }
 
     public void Heal(float heal)
@@ -38,7 +37,7 @@ public class Health : MonoBehaviour, IDamageble
         }
     }
 
-    private void TryDie()
+    private void HandleDeath()
     {
         if (_currentHealth <= 0)
             gameObject.SetActive(false);

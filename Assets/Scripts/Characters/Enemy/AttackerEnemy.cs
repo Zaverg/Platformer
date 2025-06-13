@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent (typeof(Rigidbody2D))]
-public class AttackerEnemy : State, ITransaction
+public class AttackerEnemy : State, IStateTransition
 {
     [SerializeField] private float _attackDistance;
     [SerializeField] private float _attackDelay;
@@ -37,15 +37,12 @@ public class AttackerEnemy : State, ITransaction
     {
         _rigidboody2d.velocity = Vector2.zero;
         _startAttack = Time.time;
-
-        _animator.SetPreparingForAttackAnimation(true);
     }
 
     public override void Run()
     {
         if (_startAttack + _attackDelay <= Time.time)
         {
-            _animator.SetPreparingForAttackAnimation(false);
             _isAttack = true;
 
             Vector2 directionToPlayer = (_player.transform.position - transform.position).normalized;
@@ -56,7 +53,6 @@ public class AttackerEnemy : State, ITransaction
         else if (_isAttack)
         {
             _isAttack = false;
-            _animator.SetPreparingForAttackAnimation(true);
         }
 
         _animator.SetAttackAnimation(_isAttack);
@@ -79,7 +75,6 @@ public class AttackerEnemy : State, ITransaction
     public override void Exit()
     {
         _animator.SetAttackAnimation(false);
-        _animator.SetPreparingForAttackAnimation(false);
     }
 
     private void SetTarget(Player player)

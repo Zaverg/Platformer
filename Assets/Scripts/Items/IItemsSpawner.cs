@@ -3,6 +3,6 @@ using UnityEngine;
 
 public interface IItemsSpawner
 {
-    public List<Vector2> InhabitedSurface(List<Vector2> freeSurface);
+    public List<Vector2> ReserveTilePositions(List<Vector2> freeSurface);
     public void Spawn();
 }

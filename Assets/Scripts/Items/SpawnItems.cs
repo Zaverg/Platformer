@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SpawnItems : MonoBehaviour
 {
-    [SerializeField] private DefineSurface _defineSurface;
+    [SerializeField] private SurfaceMapper _defineSurface;
     [SerializeField] private SpawnCoins _spawnCoins;
     [SerializeField] private SpawnHealth _spawnHeal;
 
@@ -16,7 +16,7 @@ public class SpawnItems : MonoBehaviour
 
     private void Start()
     {
-        _freeSurface = _spawnCoins.InhabitedSurface(_freeSurface);
+        _freeSurface = _spawnCoins.ReserveTilePositions(_freeSurface);
         _spawnCoins.Spawn();
 
         _freeSurface = _spawnHeal.InhabitedSurface(_freeSurface);

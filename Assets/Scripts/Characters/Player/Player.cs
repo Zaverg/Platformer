@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Mover _mover;
     [SerializeField] private Jumper _jumper;
     [SerializeField] private PlayerAttacker _attacker;
-    [SerializeField] private DefinedGround _definedSurfacePlayer;
+    [SerializeField] private GroundDetector _definedSurfacePlayer;
     [SerializeField] private AnimatorPlayer _animatorPlayer;
 
     private Rigidbody2D _rigidbody;
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         bool shouldMove = _jumper.IsJump == false && _inputReader.IsMove && _definedSurfacePlayer.IsGrounded;
         _animatorPlayer.SetMoveAnimation(shouldMove);
 
-        bool shouldJump = _jumper.IsJump && _rigidbody.velocity.y > 0.1f;
+        bool shouldJump = _jumper.IsJump && _definedSurfacePlayer.IsGrounded && _rigidbody.velocity.y > 0.1f;
         _animatorPlayer.SetJumpAnimation(shouldJump);
     }
 

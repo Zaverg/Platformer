@@ -5,25 +5,25 @@ using UnityEngine;
 public class SpawnHealth : MonoBehaviour
 {
     [SerializeField] private int _count;
-    [SerializeField] private Heal _healPrefab;
+    [SerializeField] private HealthPotion _healPrefab;
 
     [SerializeField] private float _respawnDelay;
 
     [SerializeField] private float _xPositionHeal;
     [SerializeField] private float _yPositionHeal;
  
-    private List<Heal> _heals;
+    private List<HealthPotion> _heals;
     private List<Vector2> _inhabitedSurface;
 
     private void Awake()
     {
-        _heals = new List<Heal>();
+        _heals = new List<HealthPotion>();
         _inhabitedSurface = new List<Vector2>();
     }
 
     private void OnDisable()
     {
-        foreach (Heal heal in _heals)
+        foreach (HealthPotion heal in _heals)
             heal.Took -= DeleteHeal;
     }
 
@@ -63,20 +63,20 @@ public class SpawnHealth : MonoBehaviour
     {
         for (int i = 0; i < _inhabitedSurface.Count; i++)
         {
-            Heal heal = Instantiate(_healPrefab, new Vector3(_inhabitedSurface[i].x + _xPositionHeal, _inhabitedSurface[i].y + _yPositionHeal, 0), Quaternion.identity);
+            HealthPotion heal = Instantiate(_healPrefab, new Vector3(_inhabitedSurface[i].x + _xPositionHeal, _inhabitedSurface[i].y + _yPositionHeal, 0), Quaternion.identity);
             heal.Took += DeleteHeal;
 
             _heals.Add(heal);
         }
     }
 
-    private void DeleteHeal(Heal heal)
+    private void DeleteHeal(HealthPotion heal)
     {
         heal.gameObject.SetActive(false);
         StartCoroutine(Respawning(heal));
     }
 
-    private IEnumerator Respawning(Heal heal)
+    private IEnumerator Respawning(HealthPotion heal)
     {
         yield return new WaitForSeconds(_respawnDelay);
         heal.gameObject.SetActive(true);

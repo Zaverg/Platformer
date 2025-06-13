@@ -37,11 +37,11 @@ public class SpawnCoins : MonoBehaviour, IItemsSpawner
             coin.Took -= DeleteCoin;
     }
 
-    public List<Vector2> InhabitedSurface(List<Vector2> freeSurface)
+    public List<Vector2> ReserveTilePositions(List<Vector2> freeSurface)
     {
         List<Vector2> surface = new List<Vector2>(freeSurface);
 
-        ExceesdedSpawnLimit(surface);
+        ClampSpawnCount(surface);
         CreateSteps();
 
         _maxIndent = (surface.Count - _countCoins) / _steps.Count;
@@ -71,7 +71,7 @@ public class SpawnCoins : MonoBehaviour, IItemsSpawner
         return surface;
     }
 
-    private void ExceesdedSpawnLimit(List<Vector2> surface)
+    private void ClampSpawnCount(List<Vector2> surface)
     {
         float maxCount = surface.Count * _maxPracentFillingMap / 100;
 

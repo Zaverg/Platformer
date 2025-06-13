@@ -1,14 +1,16 @@
 using UnityEngine;
 
-public class Chase : State, ITransaction
+public class Chase : State, IStateTransition
 {
     [SerializeField] private MoverEnemy _moverEnemy; 
     [SerializeField] private DetectionZone _detectionZone;
-    [SerializeField] private Player _player;
+    [SerializeField] private EnemyAnimator _enemyAnimator;
 
     [SerializeField] private float _speed;
     [SerializeField] private float _lostDistance;
     [SerializeField] private float _chaseDistance;
+
+    private Player _player;
 
     private Vector3 _startPositioin;
 
@@ -31,6 +33,8 @@ public class Chase : State, ITransaction
     {
         _moverEnemy.SetTarget(_player.transform);
         _moverEnemy.SetSpeed(_speed);
+
+        _enemyAnimator.SetMoveAnumation(true, _speed);
     }
 
     public override void Run()
@@ -56,6 +60,8 @@ public class Chase : State, ITransaction
     {
         _moverEnemy.SetTarget(null);
         _moverEnemy.SetSpeed(0);
+
+        _enemyAnimator.SetMoveAnumation(false, 0);
     }
 
     private void SetTarget(Player player)

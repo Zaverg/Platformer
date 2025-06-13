@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\i2016\\Platformer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\items\\spawncoins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\items\\spawncoins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\enemy\\enemyanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\enemyanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\items\\spawnhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\items\\spawnhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\attacker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\attacker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\items\\spawnitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\items\\spawnitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\enemy\\attackerenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\attackerenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\enemy\\chase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\chase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +34,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 234,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SpawnHealth.cs",
-              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Items\\SpawnHealth.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Items\\SpawnHealth.cs",
-              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Items\\SpawnHealth.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Items\\SpawnHealth.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
+              "Title": "Attacker.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Attacker.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Attacker.cs",
+              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Attacker.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Characters\\Attacker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T08:34:50.091Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SpawnCoins.cs",
-              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Items\\SpawnCoins.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Items\\SpawnCoins.cs",
-              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Items\\SpawnCoins.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Items\\SpawnCoins.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAwwF8AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T08:33:37.758Z",
+              "WhenOpened": "2025-06-13T12:02:59.294Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SpawnItems.cs",
-              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Items\\SpawnItems.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Items\\SpawnItems.cs",
-              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Items\\SpawnItems.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Items\\SpawnItems.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
+              "Title": "Health.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Health.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Health.cs",
+              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Health.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Characters\\Health.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T08:32:42.674Z"
+              "WhenOpened": "2025-06-13T11:35:49.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EnemyAnimator.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\EnemyAnimator.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\EnemyAnimator.cs",
+              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\EnemyAnimator.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Characters\\Enemy\\EnemyAnimator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T11:20:42.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AttackerEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\AttackerEnemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\AttackerEnemy.cs",
+              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\AttackerEnemy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Characters\\Enemy\\AttackerEnemy.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAEwEwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T11:19:45.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Chase.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Chase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\Chase.cs",
+              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Chase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Characters\\Enemy\\Chase.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T11:16:59.422Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Player\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\Player.cs",
+              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Player\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\Player.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwDUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T10:33:43.939Z"
             }
           ]
         }
