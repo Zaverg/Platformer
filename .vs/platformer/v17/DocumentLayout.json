@@ -3,23 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\i2016\\Platformer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\player\\mover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\mover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\player\\jumper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\jumper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\player\\grounddetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\grounddetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\player\\jumper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\jumper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\enemy\\thorns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\enemy\\thorns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\thorns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\player\\inputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\player\\inputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\inputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,7 +35,7 @@
       "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\player\\itemcollector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -47,19 +51,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Mover.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Player\\Mover.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\Mover.cs",
+              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Player\\Mover.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\Mover.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T07:49:15.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "GroundDetector.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Player\\GroundDetector.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\GroundDetector.cs",
               "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Player\\GroundDetector.cs",
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\GroundDetector.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-21T06:39:34.926Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "InputReader.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Player\\InputReader.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\InputReader.cs",
@@ -67,8 +84,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\InputReader.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T06:23:09.441Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-21T06:23:09.441Z"
             },
             {
               "$type": "Document",
@@ -78,14 +94,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\Jumper.cs",
               "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Player\\Jumper.cs",
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\Jumper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-21T06:15:17.065Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Thorns.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Thorns.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\Thorns.cs",
@@ -93,12 +109,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Enemy\\Thorns.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T05:42:55.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-21T05:42:55.966Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Enemy.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\Enemy.cs",
@@ -106,12 +121,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Enemy\\Enemy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T05:38:36.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-21T05:38:36.244Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\Player.cs",
@@ -119,12 +133,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\Player.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAAcwFUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T05:27:15.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-21T05:27:15.382Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ItemCollector.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Player\\ItemCollector.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\ItemCollector.cs",
@@ -132,12 +145,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Player\\ItemCollector.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T14:25:41.66Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T14:25:41.66Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Health.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Health.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Health.cs",
@@ -145,8 +157,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Health.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAgwB0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T11:35:49.29Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T11:35:49.29Z"
             }
           ]
         }
