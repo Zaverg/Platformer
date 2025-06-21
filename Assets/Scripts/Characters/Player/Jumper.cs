@@ -4,11 +4,11 @@ using UnityEngine;
 public class Jumper : MonoBehaviour
 {
     [SerializeField] private float _jumpForce;
-    [SerializeField] private float _jumpAngel = 45;
+    [SerializeField] private float _jumpAngel;
 
     private Rigidbody2D _rigidbody;
 
-    private bool _isJump;
+    [SerializeField] private bool _isJump;
 
     public bool IsJump => _isJump;
 
@@ -25,7 +25,6 @@ public class Jumper : MonoBehaviour
 
     public void Jump(float inputDirection)
     {
-        _rigidbody.velocity = Vector2.zero;
         _isJump = true;
 
         Vector2 directionJump;
@@ -44,6 +43,7 @@ public class Jumper : MonoBehaviour
             directionJump = new Vector2(jumpForceX * Mathf.Sign(inputDirection), jumpForceY) * _jumpForce;
         }
 
+        _rigidbody.velocity = Vector2.zero;
         _rigidbody.AddForce(directionJump, ForceMode2D.Impulse);
     }
 }

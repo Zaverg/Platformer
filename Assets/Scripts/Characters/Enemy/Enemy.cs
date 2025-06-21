@@ -4,13 +4,25 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected State _defaltState;
+    [SerializeField] protected Health _health;
     [SerializeField] protected List<State> _states = new List<State>();
 
     [SerializeField] protected State _currentState;
+
     private void Awake()
     {
         _currentState = _defaltState;
         _currentState.Enter();
+    }
+
+    private void OnEnable()
+    {
+        _health.Died += Die;
+    }
+
+    private void OnDisable()
+    {
+        _health.Died -= Die;
     }
 
     private void Update()
@@ -48,4 +60,8 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
+    protected void Die()
+    {
+        gameObject.SetActive(false);
+    }
 }

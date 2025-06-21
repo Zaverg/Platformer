@@ -24,8 +24,7 @@ public class InputReader : MonoBehaviour
         {
             Jumped?.Invoke(_inputDirection);
         }
-
-        if (IsMove)
+        else if (IsMove)
         {
             Moved?.Invoke(_inputDirection);
         }

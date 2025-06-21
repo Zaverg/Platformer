@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
         _inputReader.Jumped += OnJumpInput;
         _inputReader.Moved += OnMovementInput;
         _inputReader.Attacked += OnAttackInput;
+        _health.Died += Die;
     }
 
     private void OnDisable()
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
         _inputReader.Jumped -= OnJumpInput;
         _inputReader.Moved -= OnMovementInput;
         _inputReader.Attacked -= OnAttackInput;
+        _health.Died -= Die;
     }
 
     private void Update()
@@ -45,7 +47,7 @@ public class Player : MonoBehaviour
         bool shouldMove = _jumper.IsJump == false && _inputReader.IsMove && _definedSurfacePlayer.IsGrounded;
         _animatorPlayer.SetMoveAnimation(shouldMove);
 
-        bool shouldJump = _jumper.IsJump && _definedSurfacePlayer.IsGrounded && _rigidbody.velocity.y > 0.1f;
+        bool shouldJump = _jumper.IsJump && _definedSurfacePlayer.IsGrounded;
         _animatorPlayer.SetJumpAnimation(shouldJump);
     }
 
@@ -83,5 +85,10 @@ public class Player : MonoBehaviour
         Vector2 direction = _spriteRenderer.flipX ? Vector2.left : Vector2.right;
 
         _attacker.Attack(direction);
+    }
+
+    private void Die()
+    {
+        gameObject.SetActive(false);
     }
 }

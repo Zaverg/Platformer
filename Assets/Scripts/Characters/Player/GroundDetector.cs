@@ -9,16 +9,10 @@ public class GroundDetector  : MonoBehaviour
     [SerializeField] private float _xStepRayPosition;
 
     private int _countRays = 3;
-    private List<RaycastHit2D> _hits;
 
     private bool _isGrounded;
 
     public bool IsGrounded => _isGrounded;
-
-    private void Awake()
-    {
-        _hits = new List<RaycastHit2D>();
-    }
 
     private void FixedUpdate()
     {
@@ -27,7 +21,7 @@ public class GroundDetector  : MonoBehaviour
 
     private void DefineSurface()
     {
-        _hits.Clear();
+        List<RaycastHit2D> hits = new List<RaycastHit2D>();
 
         for (int i = 0; i < _countRays; i++)
         {
@@ -45,10 +39,10 @@ public class GroundDetector  : MonoBehaviour
 
             if (hit.collider != null)
             {
-                _hits.Add(hit);
+                hits.Add(hit);
             }
         }
 
-        _isGrounded = _hits.Count > 0;
+        _isGrounded = hits.Count > 0;
     }
 }
