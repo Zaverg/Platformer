@@ -6,12 +6,12 @@ public abstract class HealthView : MonoBehaviour
 
     private void OnEnable()
     {
-        _health.HealthChanged += UpdateHealthPointBar;
+        _health.Changed += UpdateHealthPointBar;
     }
 
     private void OnDisable()
     {
-        _health.HealthChanged -= UpdateHealthPointBar;
+        _health.Changed -= UpdateHealthPointBar;
     }
 
     protected abstract void UpdateHealthPointBar(float currentHP, float maxHP);

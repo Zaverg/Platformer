@@ -50,10 +50,7 @@ public class Chase : State, IStateTransition
 
     public bool CanTransaction()
     {
-        if (_player == null)
-            return false;
-
-        return true;
+        return _player != null;
     }
 
     public override void Exit()

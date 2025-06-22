@@ -63,7 +63,6 @@
     <Compile Include="Assets\Scripts\Characters\Enemy\EnemyAnimator.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Wallet.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Enemy.cs" />
-    <Compile Include="Assets\Scripts\HealButton.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\AnimatorPlayer.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\PlayerAttacker.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Patrol.cs" />
@@ -80,17 +79,14 @@
     <Compile Include="Assets\Scripts\Items\ITaking.cs" />
     <Compile Include="Assets\Scripts\Characters\Attacker.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Thorns.cs" />
-    <Compile Include="Assets\Scripts\ButtonAction.cs" />
     <Compile Include="Assets\Scripts\Items\SpawnerItems.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\DamageButton.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\IStateTransition.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Mover.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\AttackerEnemy.cs" />
     <Compile Include="Assets\Scripts\Items\IItemsSpawner.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Jumper.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\MoverEnemy.cs" />
-    <Compile Include="Assets\Scripts\Characters\TextHealthBar.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\ItemCollector.cs" />
     <Compile Include="Assets\Scripts\Items\SpawnerHealth.cs" />
     <Compile Include="Assets\Scripts\Characters\IHealeble.cs" />
@@ -99,8 +95,8 @@
     <Compile Include="Assets\Scripts\Items\SurfaceMapper.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Skeleton.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Chase.cs" />
+    <Compile Include="Assets\Scripts\Characters\SpriteTurn.cs" />
     <Compile Include="Assets\Scripts\Items\HealthPotion.cs" />
-    <Compile Include="Assets\Scripts\Characters\SliderHealthBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

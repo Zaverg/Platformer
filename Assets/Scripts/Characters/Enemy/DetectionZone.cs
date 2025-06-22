@@ -6,21 +6,21 @@ public class DetectionZone : MonoBehaviour
 {
     private const int Inverted = -1;
 
-    [SerializeField] private SpriteRenderer _spriteCharacter;
+    [SerializeField] private Transform _spriteCharacter;
     public event Action<Player> Detected;
 
-    private bool _isFlip;
+    private float _currentDirection;
 
     private void Start()
     {
-        _isFlip = _spriteCharacter.flipX;
+        _currentDirection = _spriteCharacter.rotation.y;
     }
 
     private void Update()
     {
-        if (_spriteCharacter.flipX != _isFlip)
+        if (_spriteCharacter.rotation.y != _currentDirection)
         {
-            _isFlip = _spriteCharacter.flipX;
+            _currentDirection = _spriteCharacter.rotation.y;
             transform.localPosition = new Vector2(transform.localPosition.x * Inverted, transform.localPosition.y);
         }
     }

@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageble, IHealebel
 {
-    public event Action<float, float> HealthChanged;
+    public event Action<float, float> Changed;
     public event Action Died;
 
-    [SerializeField] private float _maxHealth;
-    [SerializeField] private float _minHealth;
-    [SerializeField] private float _currentHealth;
+    [SerializeField] private float _max;
+    [SerializeField] private float _min;
+    [SerializeField] private float _current;
 
     private void Awake()
     {
-        _currentHealth = _maxHealth;
-        HealthChanged?.Invoke(_currentHealth, _maxHealth);
+        _current = _max;
+        Changed?.Invoke(_current, _max);
     }
 
     public void TakeDamage(float damage)
@@ -21,9 +21,9 @@ public class Health : MonoBehaviour, IDamageble, IHealebel
         if (damage <= 0) 
             return;
 
-        _currentHealth = Math.Clamp(_currentHealth - damage, 0, _maxHealth);
+        _current = Math.Clamp(_current - damage, 0, _max);
 
-        HealthChanged?.Invoke(_currentHealth, _maxHealth);
+        Changed?.Invoke(_current, _max);
         HandleDeath();
     }
 
@@ -32,14 +32,14 @@ public class Health : MonoBehaviour, IDamageble, IHealebel
         if (heal <= 0) 
             return;
 
-        _currentHealth = Math.Clamp(_currentHealth + heal, 0, _maxHealth);
+        _current = Math.Clamp(_current + heal, 0, _max);
 
-        HealthChanged?.Invoke(_currentHealth, _maxHealth);
+        Changed?.Invoke(_current, _max);
     }
 
     private void HandleDeath()
     {
-        if (_currentHealth <= 0)
+        if (_current <= 0)
             Died?.Invoke();
     }
 }

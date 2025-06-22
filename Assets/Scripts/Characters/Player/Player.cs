@@ -11,14 +11,13 @@ public class Player : MonoBehaviour
     [SerializeField] private AnimatorPlayer _animatorPlayer;
     [SerializeField] private Wallet _wallet;
     [SerializeField] private Health _health;
+    [SerializeField] private Transform _sprite;
 
     private Rigidbody2D _rigidbody;
-    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -63,8 +62,6 @@ public class Player : MonoBehaviour
 
     private void OnMovementInput(float inputDirection)
     {
-        _spriteRenderer.flipX = inputDirection < 0;
-
         if (_jumper.IsJump == false && _definedSurfacePlayer.IsGrounded)
         {
             Vector2 direction = Vector2.right * inputDirection;
@@ -82,7 +79,7 @@ public class Player : MonoBehaviour
 
     private void OnAttackInput()
     {
-        Vector2 direction = _spriteRenderer.flipX ? Vector2.left : Vector2.right;
+        Vector2 direction = _sprite.rotation.y > 0 ? Vector2.left : Vector2.right;
 
         _attacker.Attack(direction);
     }

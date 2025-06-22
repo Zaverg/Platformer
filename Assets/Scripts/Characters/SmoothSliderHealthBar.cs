@@ -1,11 +1,19 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class SmoothSliderHealthBar : SliderHealthBar
-{   
+[RequireComponent(typeof(Slider))]
+public class SmoothSliderHealthBar : HealthView
+{
     [SerializeField, Min(0.01f)] private float _speedChange;
 
     private Coroutine _coroutine;
+    private Slider _slider;
+
+    private void Awake()
+    {
+        _slider = GetComponent<Slider>();
+    }
 
     protected override void UpdateHealthPointBar(float currentHealth, float maxHealth)
     {
