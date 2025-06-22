@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Chase : State, IStateTransition
+public class Chaser : State, IStateTransition
 {
     [SerializeField] private MoverEnemy _moverEnemy; 
     [SerializeField] private DetectionZone _detectionZone;

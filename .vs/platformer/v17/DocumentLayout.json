@@ -3,15 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\i2016\\Platformer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\enemy\\chase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\chase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\enemy\\enemyanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\enemyanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\spriteturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\enemy\\patroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\patroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\enemy\\chaser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\chaser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\spriteturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\spriteturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|c:\\users\\i2016\\platformer\\assets\\scripts\\characters\\enemy\\detectionzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\enemy\\detectionzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\detectionzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,10 +35,6 @@
       "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\skeleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\enemy\\enemyanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\enemyanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Platformer\\assets\\scripts\\characters\\enemy\\moverenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{100AE41E-9853-00A1-0814-C759729749EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\characters\\enemy\\moverenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -42,11 +46,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 234,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Patroller.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Patroller.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\Patroller.cs",
+              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Patroller.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Characters\\Enemy\\Patroller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T09:39:42.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "SpriteTurn.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\SpriteTurn.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\SpriteTurn.cs",
@@ -54,25 +71,23 @@
               "RelativeToolTip": "Assets\\Scripts\\Characters\\SpriteTurn.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T08:50:18.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-22T08:50:18.62Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Chase.cs",
-              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Chase.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\Chase.cs",
-              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Chase.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Characters\\Enemy\\Chase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Chaser.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Chaser.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\Chaser.cs",
+              "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Chaser.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Characters\\Enemy\\Chaser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T08:49:56.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-22T08:49:56.778Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Player\\Player.cs",
@@ -84,19 +99,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "EnemyAnimator.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\EnemyAnimator.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\EnemyAnimator.cs",
               "ToolTip": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\EnemyAnimator.cs",
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Enemy\\EnemyAnimator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T12:59:19.95Z"
+              "WhenOpened": "2025-06-21T12:59:19.95Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "DetectionZone.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\DetectionZone.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\DetectionZone.cs",
@@ -104,12 +120,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Characters\\Enemy\\DetectionZone.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T12:31:26.14Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-21T12:31:26.14Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "MoverEnemy.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\MoverEnemy.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\MoverEnemy.cs",
@@ -121,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Enemy.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\Enemy.cs",
@@ -133,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Skeleton.cs",
               "DocumentMoniker": "C:\\Users\\i2016\\Platformer\\Assets\\Scripts\\Characters\\Enemy\\Skeleton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Characters\\Enemy\\Skeleton.cs",
