@@ -17,12 +17,6 @@ public class Jumper : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
-    {
-        if (_isJump && _rigidbody.velocity.y == 0f)
-            _isJump = false;
-    }
-
     public void Jump(float inputDirection)
     {
         _isJump = true;
@@ -45,5 +39,10 @@ public class Jumper : MonoBehaviour
 
         _rigidbody.velocity = Vector2.zero;
         _rigidbody.AddForce(directionJump, ForceMode2D.Impulse);
+    }
+
+    public void FinishJump()
+    {
+        _isJump = false;
     }
 }

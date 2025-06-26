@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 public class SurfaceMapper : MonoBehaviour
 {
     private const string NameSurface = "Grass";
-
+    [SerializeField] private List<TileBase> _surfaceTile;
     [SerializeField] private Tilemap _tileMap;
     private List<Vector2> _surface;
 
@@ -22,7 +22,7 @@ public class SurfaceMapper : MonoBehaviour
 
                 TileBase tile = _tileMap.GetTile(positionTile);
 
-                if (tile != null && tile.name == NameSurface)
+                if (tile != null && _surfaceTile.Contains(tile))
                 {
                     Vector2 worldPosition = _tileMap.CellToWorld(positionTile);
                     _surface.Add(worldPosition);

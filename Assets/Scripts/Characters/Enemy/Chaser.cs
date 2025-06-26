@@ -4,19 +4,16 @@ public class Chaser : State, IStateTransition
 {
     [SerializeField] private MoverEnemy _moverEnemy; 
     [SerializeField] private DetectionZone _detectionZone;
-    [SerializeField] private EnemyAnimator _enemyAnimator;
 
     [SerializeField] private float _speed;
-    [SerializeField] private float _lostDistance;
     [SerializeField] private float _chaseDistance;
 
+    [SerializeField] private Transform _startPointPositioin;
     private Player _player;
-
-    private Vector3 _startPositioin;
 
     private void Start()
     {
-        _startPositioin = transform.position;
+        transform.position = _startPointPositioin.position;
     }
 
     private void OnEnable()
@@ -31,34 +28,32 @@ public class Chaser : State, IStateTransition
 
     public override void Enter()
     {
-        _moverEnemy.SetTarget(_player.transform);
-        _moverEnemy.SetSpeed(_speed);
-
-        _enemyAnimator.SetMoveAnumation(true, _speed);
+        _moverEnemy.SetParams(_player.transform, _speed);
     }
 
     public override void Run()
     {
-        bool isLost = (_player.transform.position - transform.position).sqrMagnitude > _lostDistance * _lostDistance;
-        bool isAway = (_startPositioin - transform.position).sqrMagnitude > _chaseDistance * _chaseDistance;
-
-        if (isLost || isAway)
-            _player = null;
-        else
-            _moverEnemy.Move();
+         _moverEnemy.Move();
     }
 
     public bool CanTransaction()
     {
-        return _player != null;
+        if (_player != null)
+        {
+            bool isAway = (_startPointPositioin.position - transform.position).sqrMagnitude > _chaseDistance * _chaseDistance;
+
+            if (isAway == false)
+                return true;
+
+            _player = null;
+        }
+
+        return false;
     }
 
     public override void Exit()
     {
-        _moverEnemy.SetTarget(null);
-        _moverEnemy.SetSpeed(0);
-
-        _enemyAnimator.SetMoveAnumation(false, 0);
+        _moverEnemy.SetParams(null);
     }
 
     private void SetTarget(Player player)

@@ -110,10 +110,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moverEnemy: {fileID: 5750635141282397301}
   _detectionZone: {fileID: 2331590861272428102}
-  _enemyAnimator: {fileID: 546710844482258674}
   _speed: 2
-  _lostDistance: 5
-  _chaseDistance: 6
+  _chaseDistance: 5.5
+  _startPointPositioin: {fileID: 0}
 --- !u!114 &818373786450056871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moverEnemy: {fileID: 5750635141282397301}
-  _enemyAnimator: {fileID: 546710844482258674}
   _speed: 1
   _pointToPatrols:
   - {fileID: 0}
@@ -157,15 +155,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 863945946492348208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628528d703b2d374dbc3ecbfee666f26, type: 3}
+  m_Script: {fileID: 11500000, guid: 968b32391b6b9bd46935d2b39b39abd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDistance: 1.5
-  _attackDelay: 1.5
-  _damage: 15
-  _attacker: {fileID: 8162385428401047915}
-  _detectionZone: {fileID: 2331590861272428102}
-  _animator: {fileID: 546710844482258674}
+  _attackDistance: 2
+  _attackDelayMin: 0.5
+  _attackDelayMax: 1.5
+  _damage: 0
+  _attacker: {fileID: 0}
+  _detectionZone: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!114 &5750635141282397301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentTarget: {fileID: 0}
+  _enemyAnimator: {fileID: 546710844482258674}
 --- !u!50 &872315201774476471
 Rigidbody2D:
   serializedVersion: 4
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 6705307630051231561}
   - component: {fileID: 546710844482258674}
   m_Layer: 6
-  m_Name: Sprite
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,7 +296,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 724360421, guid: 21ac5ee7b5389344ba7fa31c8942ae7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

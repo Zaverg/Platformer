@@ -34,26 +34,16 @@ public class SpawnerHealth : MonoBehaviour
         if (_count > surface.Count)
             _count = surface.Count;
 
-        int stepSize = surface.Count / _count;
-
-        for (int i = 0; i < _count; i++)
+        for (int i = _count - 1; i >= 0; i--)
         {
+            int stepSize = surface.Count / _count;
             int start = stepSize * i;
             int end = start + stepSize;
 
             int index = Random.Range(start, end);
 
             _inhabitedSurface.Add(surface[index]);
-        }
-
-        for (int i = 0; i < surface.Count; i++)
-        {
-            if (_inhabitedSurface.Contains(surface[i]))
-            {
-                surface.RemoveAt(i);
-
-                i--;
-            }
+            surface.RemoveAt(index);
         }
 
         return surface;

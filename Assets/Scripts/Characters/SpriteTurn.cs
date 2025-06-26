@@ -3,20 +3,21 @@ using UnityEngine;
 public class SpriteTurn : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidbody;
+    
+    private float _turnZone = 0.1f;
 
     private void Update()
     {
-        if (_rigidbody.velocity.x != 0)
-            TurnInDirection(_rigidbody.velocity.x);    
+        TurnInDirection(_rigidbody.velocity.x);    
     }
 
-    private void TurnInDirection(float inputDirection)
+    private void TurnInDirection(float moveDirection)
     {
-        float rigth = 0;
-        float left = 180;
+        if (Mathf.Abs(moveDirection) < _turnZone)
+            return;
 
-        float degrees = inputDirection > 0 ? rigth : left;
+        float targetRotationY = moveDirection > 0 ? 0f : 180f;
 
-        transform.rotation = Quaternion.Euler(0, degrees, 0);
+        transform.rotation = Quaternion.Euler(0, targetRotationY, 0);
     }
 }

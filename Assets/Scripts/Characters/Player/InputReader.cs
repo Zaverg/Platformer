@@ -6,12 +6,14 @@ public class InputReader : MonoBehaviour
     private const string AxisMovingX = "Horizontal";
 
     [SerializeField] private KeyCode _jumpButton;
+    [SerializeField] private KeyCode _abilityActicate;
 
     private int _mouseButtonAttack = 0;
     private float _inputDirection;
 
     public event Action<float> Jumped;
     public event Action<float> Moved;
+    public event Action AbilityActivating;
     public event Action Attacked;
 
     public bool IsMove => _inputDirection != 0;
@@ -24,7 +26,8 @@ public class InputReader : MonoBehaviour
         {
             Jumped?.Invoke(_inputDirection);
         }
-        else if (IsMove)
+
+        if (IsMove)
         {
             Moved?.Invoke(_inputDirection);
         }
@@ -32,6 +35,11 @@ public class InputReader : MonoBehaviour
         if (Input.GetMouseButtonDown(_mouseButtonAttack))
         {
             Attacked?.Invoke();
+        }
+
+        if (Input.GetKeyDown(_abilityActicate))
+        {
+            AbilityActivating?.Invoke();
         }
     }
 }

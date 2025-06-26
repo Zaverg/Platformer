@@ -7,13 +7,15 @@ public class Player : MonoBehaviour
     [SerializeField] private Mover _mover;
     [SerializeField] private Jumper _jumper;
     [SerializeField] private PlayerAttacker _attacker;
-    [SerializeField] private GroundDetector _definedSurfacePlayer;
+    [SerializeField] private GroundDetector _groundDetector;
     [SerializeField] private AnimatorPlayer _animatorPlayer;
     [SerializeField] private Wallet _wallet;
     [SerializeField] private Health _health;
     [SerializeField] private Transform _sprite;
+    [SerializeField] private Ability _ability;
 
     private Rigidbody2D _rigidbody;
+    private float _stayVeleocity = 0.1f;
 
     private void Awake()
     {
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
         _inputReader.Moved += OnMovementInput;
         _inputReader.Attacked += OnAttackInput;
         _health.Died += Die;
+        _inputReader.AbilityActivating += _ability.Activation;
     }
 
     private void OnDisable()
@@ -38,16 +41,16 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (_definedSurfacePlayer.IsGrounded == false && _jumper.IsJump == false || _inputReader.IsMove == false && _jumper.IsJump == false)
+        if (_groundDetector.IsGrounded == false && _jumper.IsJump == false || _inputReader.IsMove == false && _jumper.IsJump == false)
         {
             _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);
         }
             
-        bool shouldMove = _jumper.IsJump == false && _inputReader.IsMove && _definedSurfacePlayer.IsGrounded;
+        bool shouldMove = _inputReader.IsMove && _groundDetector.IsGrounded;
         _animatorPlayer.SetMoveAnimation(shouldMove);
 
-        bool shouldJump = _jumper.IsJump && _definedSurfacePlayer.IsGrounded;
-        _animatorPlayer.SetJumpAnimation(shouldJump);
+        if (_jumper.IsJump && _groundDetector.IsGrounded && Mathf.Abs(_rigidbody.velocity.y) < _stayVeleocity)
+            _jumper.FinishJump();
     }
 
     public void CollectMoney()
@@ -62,7 +65,7 @@ public class Player : MonoBehaviour
 
     private void OnMovementInput(float inputDirection)
     {
-        if (_jumper.IsJump == false && _definedSurfacePlayer.IsGrounded)
+        if (_jumper.IsJump == false && _groundDetector.IsGrounded)
         {
             Vector2 direction = Vector2.right * inputDirection;
             _mover.Move(direction);
@@ -73,8 +76,11 @@ public class Player : MonoBehaviour
 
     private void OnJumpInput(float inputDirection)
     {
-        if (_definedSurfacePlayer.IsGrounded && _jumper.IsJump == false)
+        if (_groundDetector.IsGrounded && _jumper.IsJump == false)
+        {
             _jumper.Jump(inputDirection);
+            _animatorPlayer.SetJumpAnimation();
+        }
     }
 
     private void OnAttackInput()

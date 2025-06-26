@@ -4,10 +4,12 @@ using UnityEngine;
 public class AnimatorPlayer : MonoBehaviour
 {
     private static readonly int s_move = Animator.StringToHash("IsMove");
-    private static readonly int s_jump = Animator.StringToHash("IsJump");
+    private static readonly int s_jump = Animator.StringToHash("Jump");
     private static readonly int s_attack = Animator.StringToHash("Attack");
 
     private Animator _animator;
+
+    public Animator Animator => _animator;
 
     private void Awake()
     {
@@ -19,9 +21,9 @@ public class AnimatorPlayer : MonoBehaviour
         _animator.SetBool(s_move, isMove);
     }
 
-    public void SetJumpAnimation(bool isJump)
+    public void SetJumpAnimation()
     {
-        _animator.SetBool(s_jump, isJump);
+        _animator.SetTrigger(s_jump);
     }
 
     public void SetAttackAnimation()

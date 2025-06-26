@@ -12,6 +12,13 @@ public class PlayerAttacker : MonoBehaviour
     private float _lastAttack;
     private bool CanAttack => Time.time >= _lastAttack + _attackDelay;
 
+    private void Awake()
+    {
+        float halfLength = _animator.Animator.GetCurrentAnimatorStateInfo(0).length / 2;
+
+        _attacker.SetTimeToWait(halfLength);
+    }
+
     public void Attack(Vector2 direction)
     {
         if (CanAttack == false)

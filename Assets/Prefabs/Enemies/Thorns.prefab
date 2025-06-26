@@ -203,7 +203,7 @@ MonoBehaviour:
   _defaltState: {fileID: 2450962678746157558}
   _health: {fileID: 3982234919386244435}
   _states:
-  - {fileID: 8975920956719624934}
+  - {fileID: 0}
   - {fileID: 644251754473995174}
   _currentState: {fileID: 0}
 --- !u!114 &644251754473995174
@@ -220,10 +220,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moverEnemy: {fileID: 3675797560065037994}
   _detectionZone: {fileID: 5042341442741495981}
-  _enemyAnimator: {fileID: 5323680824830259920}
   _speed: 3
-  _lostDistance: 3
   _chaseDistance: 5
+  _startPointPositioin: {fileID: 0}
 --- !u!114 &8975920956719624934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,11 +232,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5207299868685992158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628528d703b2d374dbc3ecbfee666f26, type: 3}
+  m_Script: {fileID: 11500000, guid: 968b32391b6b9bd46935d2b39b39abd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDistance: 1.5
-  _attackDelay: 1
+  _attackDistance: 1
+  _attackDelayMin: 1
+  _attackDelayMax: 2
   _damage: 10
   _attacker: {fileID: 8903781497558323396}
   _detectionZone: {fileID: 5042341442741495981}
@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentTarget: {fileID: 0}
+  _enemyAnimator: {fileID: 0}
 --- !u!114 &2450962678746157558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moverEnemy: {fileID: 3675797560065037994}
-  _enemyAnimator: {fileID: 5323680824830259920}
   _speed: 1
   _pointToPatrols:
   - {fileID: 0}

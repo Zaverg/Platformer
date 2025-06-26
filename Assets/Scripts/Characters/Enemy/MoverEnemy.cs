@@ -3,7 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoverEnemy : MonoBehaviour
 {
-    [SerializeField] private Transform _currentTarget; 
+    [SerializeField] private Transform _currentTarget;
+    [SerializeField] private EnemyAnimator _enemyAnimator;
+
     private Rigidbody2D _rigidbody2D;
 
     private float _speed;
@@ -11,7 +13,6 @@ public class MoverEnemy : MonoBehaviour
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _currentTarget = null;
     }
 
     public void Move()
@@ -21,19 +22,14 @@ public class MoverEnemy : MonoBehaviour
             Vector2 direction = (_currentTarget.position - transform.position).normalized;
             _rigidbody2D.velocity = new Vector2(direction.x * _speed, _rigidbody2D.velocity.y);
         }
-        else
-        {
-            _rigidbody2D.velocity = Vector2.zero;
-        }
-}
-
-    public void SetTarget(Transform target)
-    {
-       _currentTarget = target;
     }
 
-    public void SetSpeed(float speed)
+    public void SetParams(Transform target, float speed = 0)
     {
+        _rigidbody2D.velocity = Vector2.zero;
+
+        _currentTarget = target;
         _speed = speed;
+        _enemyAnimator.SetMoveAnumation(_speed);
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 public class Patroller : State
 {
     [SerializeField] private MoverEnemy _moverEnemy;
-    [SerializeField] private EnemyAnimator _enemyAnimator;
     [SerializeField] private float _speed;
 
     [SerializeField] private List<Transform> _pointToPatrols = new List<Transform>();
@@ -15,10 +14,7 @@ public class Patroller : State
     public override void Enter()
     {
         _currentTarget = _pointToPatrols[0];
-
-        _enemyAnimator.SetMoveAnumation(true, _speed);
-        _moverEnemy.SetSpeed(_speed);
-        _moverEnemy.SetTarget(_currentTarget);
+        _moverEnemy.SetParams(_currentTarget, _speed);
     }
 
     public override void Run()
@@ -29,7 +25,7 @@ public class Patroller : State
 
             _currentTarget = _pointToPatrols[index];
 
-            _moverEnemy.SetTarget(_currentTarget);
+            _moverEnemy.SetParams(_currentTarget, _speed);
         }
 
         _moverEnemy.Move();
@@ -37,8 +33,6 @@ public class Patroller : State
 
     public override void Exit()
     {
-        _moverEnemy.SetSpeed(0);
-        _moverEnemy.SetTarget(null);
-        _enemyAnimator.SetMoveAnumation(false, 0);
+        _moverEnemy.SetParams(null);
     }
 }

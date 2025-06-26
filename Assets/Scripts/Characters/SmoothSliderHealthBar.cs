@@ -20,10 +20,10 @@ public class SmoothSliderHealthBar : HealthView
         if (_coroutine != null)
             StopCoroutine(_coroutine);
 
-        _coroutine = StartCoroutine(StartCangingHP(currentHealth / maxHealth));
+        _coroutine = StartCoroutine(StartCangingHealth(currentHealth / maxHealth));
     }
 
-    private IEnumerator StartCangingHP(float target)
+    private IEnumerator StartCangingHealth(float target)
     {
         float startValue = _slider.value;
         float value = 0;
