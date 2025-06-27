@@ -10,8 +10,6 @@ public class SmoothSliderHealthBar : HealthView
     private Coroutine _coroutine;
     private Slider _slider;
 
-    private float _target;
-
     private void Awake()
     {
         _slider = GetComponent<Slider>();
@@ -19,10 +17,8 @@ public class SmoothSliderHealthBar : HealthView
 
     protected override void UpdateHealthPointBar(float currentHealth, float maxHealth)
     {
-        _target = currentHealth / maxHealth;
-
         if (_coroutine == null)
-            _coroutine = StartCoroutine(StartCangingHealth(_target));
+            _coroutine = StartCoroutine(StartCangingHealth(currentHealth / maxHealth));
     }
 
     private IEnumerator StartCangingHealth(float target)
