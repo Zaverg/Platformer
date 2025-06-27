@@ -27,35 +27,47 @@ public class VampirismAbility : Ability
     private bool _isActive = false;
     private bool _isOnCooldown = false;
 
+    private IHealebel _health;
+
     private void Awake()
     {
         _zoneVisual.transform.localScale = new Vector3(_radius / transform.lossyScale.x, _radius / transform.lossyScale.y);
         _currentDuration = _maxDuration;
+
+        _health = GetComponentInParent<IHealebel>();
     }
 
     private void Update()
     {
         if (_isActive)
         {
+            UpdateTimer();
+
             IDamageable enemy = FindNearestEnemy();
-            DealDamage(enemy);
+            DealVimpireDamage(enemy);
         }
 
         if (_isOnCooldown)
             Recovery();
     }
 
-    public void DealDamage(IDamageable enemy)
+    private void DealVimpireDamage(IDamageable enemy)
+    {
+        if (enemy == null || _health == null)
+            return;
+
+        float healthPoint = _damagePerSeconds * Time.deltaTime;
+
+        enemy.TakeDamage(healthPoint);
+        _health.Heal(healthPoint); 
+    }
+
+    private void UpdateTimer()
     {
         if (_currentDuration > 0)
         {
             _currentDuration -= Time.deltaTime;
             Changed?.Invoke(_currentDuration, _maxDuration);
-
-            if (enemy == null)
-                return;
-
-                enemy.TakeDamage(_damagePerSeconds * Time.deltaTime);
 
             return;
         }
