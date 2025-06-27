@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Health : MonoBehaviour, IDamageble, IHealebel
+public class Health : MonoBehaviour, IDamageable, IHealebel
 {
     public event Action<float, float> Changed;
     public event Action Died;

@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         _inputReader.Moved += OnMovementInput;
         _inputReader.Attacked += OnAttackInput;
         _health.Died += Die;
-        _inputReader.AbilityActivating += _ability.Activation;
+        _inputReader.AbilityActivating += _ability.Activate;
     }
 
     private void OnDisable()

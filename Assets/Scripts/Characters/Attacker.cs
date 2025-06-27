@@ -47,7 +47,7 @@ public class Attacker : MonoBehaviour
     {
         yield return _wait;
 
-        if (_hit != null && _hit.TryGetComponent(out IDamageble character))
+        if (_hit != null && _hit.TryGetComponent(out IDamageable character))
             character.TakeDamage(damage);
 
         _coroutine = null;

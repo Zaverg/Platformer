@@ -74,9 +74,9 @@
     <Compile Include="Assets\Scripts\Characters\Player\GroundDetector.cs" />
     <Compile Include="Assets\Scripts\Characters\Health.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\Vampirism.cs" />
     <Compile Include="Assets\Scripts\Items\Coin.cs" />
     <Compile Include="Assets\Scripts\Characters\HealthView.cs" />
+    <Compile Include="Assets\Scripts\Characters\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Items\ITaking.cs" />
     <Compile Include="Assets\Scripts\Characters\Attacker.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Thorns.cs" />
@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Characters\Enemy\Chaser.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\IStateTransition.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Mover.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\VampirismAbility.cs" />
     <Compile Include="Assets\Scripts\Items\IItemsSpawner.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Jumper.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Ability.cs" />
@@ -95,7 +96,6 @@
     <Compile Include="Assets\Scripts\Items\SpawnerHealth.cs" />
     <Compile Include="Assets\Scripts\Characters\IHealeble.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\InputReader.cs" />
-    <Compile Include="Assets\Scripts\Characters\IDamageble.cs" />
     <Compile Include="Assets\Scripts\Items\SurfaceMapper.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Skeleton.cs" />
     <Compile Include="Assets\Scripts\Characters\SpriteTurn.cs" />
