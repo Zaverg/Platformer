@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -22,12 +23,8 @@ public class VampirismAbility : Ability
     private float _currentDuration;
     private float _currentCooldown;
 
-    private List<Collider2D> _hits = new List<Collider2D>();
-
-    private bool _isActive = false;
-    private bool _isOnCooldown = false;
-
     private IHealebel _health;
+    private Coroutine _corutine;
 
     private void Awake()
     {
@@ -35,20 +32,6 @@ public class VampirismAbility : Ability
         _currentDuration = _maxDuration;
 
         _health = GetComponentInParent<IHealebel>();
-    }
-
-    private void Update()
-    {
-        if (_isActive)
-        {
-            UpdateTimer();
-
-            IDamageable enemy = FindNearestEnemy();
-            DealVimpireDamage(enemy);
-        }
-
-        if (_isOnCooldown)
-            Recovery();
     }
 
     private void DealVimpireDamage(IDamageable enemy)
@@ -62,33 +45,22 @@ public class VampirismAbility : Ability
         _health.Heal(healthPoint); 
     }
 
-    private void UpdateTimer()
+    private void UpdateDuration()
     {
-        if (_currentDuration > 0)
-        {
-            _currentDuration -= Time.deltaTime;
-            Changed?.Invoke(_currentDuration, _maxDuration);
-
-            return;
-        }
-
-        _isOnCooldown = true;
-        _isActive = false;
-        _zoneVisual.gameObject.SetActive(false);
+        _currentDuration -= Time.deltaTime;
+        Changed?.Invoke(_currentDuration, _maxDuration);
     }
 
     public override void Activate()
     {
-        if (_isActive == false && _isOnCooldown == false)
-        {
-            _isActive = true;
-            _zoneVisual.gameObject.SetActive(true);
-        }
+        if (_corutine == null)
+            _corutine = StartCoroutine(StartAbility());
+        
     }
 
     private void Recovery()
     {
-        if (_currentCooldown <  _maxCooldown)
+        if (_currentCooldown < _maxCooldown)
         {
             _currentCooldown += Time.deltaTime;
 
@@ -97,28 +69,35 @@ public class VampirismAbility : Ability
             return;
         }
 
-        _isOnCooldown = false;
         _currentDuration = _maxDuration;
         _currentCooldown = 0;
+
+        StopCoroutine(_corutine);
+        _corutine = null;
     }
 
-    private IDamageable FindNearestEnemy()
+    private IEnumerator StartAbility() 
     {
-        _hits = Physics2D.OverlapCircleAll(transform.position, _radius, _layer).ToList();
+        _zoneVisual.gameObject.SetActive(true);
 
-        if (_hits.Count == 0)
-            return null;
-
-        Collider2D closer = _hits[0];
-
-        foreach (Collider2D _hit in _hits)
+        while (enabled)
         {
-            if ((closer.transform.position - transform.position).sqrMagnitude > (_hit.transform.position - transform.position).sqrMagnitude)
-                closer = _hit;
+            if (_currentDuration > 0)
+            {
+                UpdateDuration();
+
+                IDamageable enemy = TargetFinder.FindNearestTarget<IDamageable>(transform.position, _radius, _layer);
+                DealVimpireDamage(enemy);
+
+                if (_currentDuration <= 0)
+                    _zoneVisual.gameObject.SetActive(false);
+            }
+            else if (_currentDuration <= 0)
+            {
+                Recovery();
+            }
+
+            yield return null;
         }
-
-        closer.TryGetComponent(out IDamageable enemy);
-
-        return enemy;
     }
 }

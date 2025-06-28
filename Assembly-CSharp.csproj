@@ -79,7 +79,6 @@
     <Compile Include="Assets\Scripts\Characters\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Items\ITaking.cs" />
     <Compile Include="Assets\Scripts\Characters\Attacker.cs" />
-    <Compile Include="Assets\Scripts\Characters\Enemy\Thorns.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\AbilityView.cs" />
     <Compile Include="Assets\Scripts\Items\SpawnerItems.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
@@ -92,12 +91,12 @@
     <Compile Include="Assets\Scripts\Characters\Player\Ability.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\Patroller.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\MoverEnemy.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\TargetFinder.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\ItemCollector.cs" />
     <Compile Include="Assets\Scripts\Items\SpawnerHealth.cs" />
     <Compile Include="Assets\Scripts\Characters\IHealeble.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\InputReader.cs" />
     <Compile Include="Assets\Scripts\Items\SurfaceMapper.cs" />
-    <Compile Include="Assets\Scripts\Characters\Enemy\Skeleton.cs" />
     <Compile Include="Assets\Scripts\Characters\SpriteTurn.cs" />
     <Compile Include="Assets\Scripts\Items\HealthPotion.cs" />
   </ItemGroup>

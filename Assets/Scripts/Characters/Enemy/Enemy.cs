@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] protected State _defaltState;
     [SerializeField] protected Health _health;
@@ -31,7 +31,7 @@ public abstract class Enemy : MonoBehaviour
         TryChangeState();
     }
 
-    protected virtual void TryChangeState()
+    private void TryChangeState()
     {
         bool isTrasaction = false;
 
@@ -60,7 +60,7 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    protected void Die()
+    private void Die()
     {
         gameObject.SetActive(false);
     }

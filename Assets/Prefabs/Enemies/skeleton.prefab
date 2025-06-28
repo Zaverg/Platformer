@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8220153976517211078}
-  - component: {fileID: 5134489209323962534}
   - component: {fileID: 2174150604245315413}
+  - component: {fileID: 2103518734388242729}
   - component: {fileID: 4019053006214745664}
   - component: {fileID: 818373786450056871}
   - component: {fileID: 8162385428401047915}
@@ -43,24 +43,6 @@ Transform:
   - {fileID: 6375658965975787860}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5134489209323962534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863945946492348208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b185fc5493ee12b42b6fe4daac10146f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _defaltState: {fileID: 818373786450056871}
-  _health: {fileID: 6368718708302447809}
-  _states:
-  - {fileID: 6571892101161518372}
-  - {fileID: 4019053006214745664}
-  _currentState: {fileID: 0}
 --- !u!70 &2174150604245315413
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -96,6 +78,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.023485024, y: -0.04828453}
   m_Size: {x: 1.7315022, y: 3.8360937}
   m_Direction: 0
+--- !u!114 &2103518734388242729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863945946492348208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99c6b75943e4684c8843859581b661a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaltState: {fileID: 818373786450056871}
+  _health: {fileID: 6368718708302447809}
+  _states:
+  - {fileID: 6571892101161518372}
+  - {fileID: 4019053006214745664}
+  _currentState: {fileID: 0}
 --- !u!114 &4019053006214745664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,13 +158,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968b32391b6b9bd46935d2b39b39abd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDistance: 2
-  _attackDelayMin: 0.5
+  _attackDistance: 2.5
+  _attackDelayMin: 1
   _attackDelayMax: 1.5
-  _damage: 0
-  _attacker: {fileID: 0}
-  _detectionZone: {fileID: 0}
-  _animator: {fileID: 0}
+  _damage: 10
+  _attacker: {fileID: 8162385428401047915}
+  _detectionZone: {fileID: 2331590861272428102}
+  _animator: {fileID: 546710844482258674}
 --- !u!114 &5750635141282397301
 MonoBehaviour:
   m_ObjectHideFlags: 0
